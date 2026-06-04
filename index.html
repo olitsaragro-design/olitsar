@@ -146,6 +146,8 @@ h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;line-height:1.15}
 .pc:hover{transform:translateY(-12px);box-shadow:var(--shadow-lg)}
 .pc-img{height:240px;background-size:cover;background-position:center;position:relative}
 .pc-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(15,61,46,.75) 0%,transparent 60%)}
+.pc-img[style*="gradient"]{position:relative}
+.pc-img[style*="gradient"]::after{background:linear-gradient(to top,rgba(0,0,0,.3) 0%,transparent 50%)}
 .pc-tags{position:absolute;bottom:.8rem;left:.8rem;display:flex;gap:.4rem;z-index:1}
 .pc-tag{background:rgba(255,255,255,.2);backdrop-filter:blur(6px);color:#fff;font-size:.65rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.25rem .6rem;border-radius:999px}
 .pc-body{padding:1.6rem}
@@ -551,7 +553,8 @@ footer{background:#0A1C13;color:rgba(255,255,255,.65);padding:4rem 0 2rem}
 
       <!-- КУКУРУДЗА -->
       <div class="pc reveal d2">
-        <div class="pc-img" style="background-image:url('https://images.unsplash.com/photo-1601593768799-76cf0eb5c37f?q=80&w=2070')">
+        <div class="pc-img" style="background:linear-gradient(135deg,#B8920A 0%,#E0B820 45%,#C09A10 100%);display:flex;align-items:center;justify-content:center">
+          <span style="font-size:5rem;filter:drop-shadow(0 4px 12px rgba(0,0,0,.3));position:relative;z-index:1">🌽</span>
           <div class="pc-tags"><span class="pc-tag">3 клас</span><span class="pc-tag">ДСТУ 4525:2006</span></div>
         </div>
         <div class="pc-body">
@@ -581,7 +584,7 @@ footer{background:#0A1C13;color:rgba(255,255,255,.65);padding:4rem 0 2rem}
 
       <!-- ЯЧМІНЬ -->
       <div class="pc reveal d3">
-        <div class="pc-img" style="background-image:url('https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?q=80&w=2070')">
+        <div class="pc-img" style="background-image:url('https://images.unsplash.com/photo-1719557362652-d68caf96df85?q=80&w=2070');background-size:cover;background-position:center">
           <div class="pc-tags"><span class="pc-tag">3 клас</span><span class="pc-tag">ДСТУ 3769-98</span></div>
         </div>
         <div class="pc-body">
@@ -640,7 +643,7 @@ footer{background:#0A1C13;color:rgba(255,255,255,.65);padding:4rem 0 2rem}
 
       <!-- СОЯ -->
       <div class="pc reveal d2">
-        <div class="pc-img" style="background-image:url('https://images.unsplash.com/photo-1612257416648-8b92a1e29c3d?q=80&w=2070')">
+        <div class="pc-img" style="background-image:url('https://images.unsplash.com/photo-1569205534881-a028dc99a029?q=80&w=2070');background-size:cover;background-position:center">
           <div class="pc-tags"><span class="pc-tag">ГМО ≤5%</span><span class="pc-tag">ДСТУ 4964:2008</span></div>
         </div>
         <div class="pc-body">
@@ -673,7 +676,7 @@ footer{background:#0A1C13;color:rgba(255,255,255,.65);padding:4rem 0 2rem}
 
       <!-- РІПАК -->
       <div class="pc reveal d3">
-        <div class="pc-img" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070')">
+        <div class="pc-img" style="background-image:url('https://images.unsplash.com/photo-1766711054135-8e9dff020236?q=80&w=2070');background-size:cover;background-position:center">
           <div class="pc-tags"><span class="pc-tag">Ерукова ≤2%</span><span class="pc-tag">ДСТУ 4966:2008</span></div>
         </div>
         <div class="pc-body">
