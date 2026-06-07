@@ -107,7 +107,31 @@ h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;line-height:1.15}
 .hero-float-n{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:700;color:var(--gold);line-height:1}
 .hero-float-l{font-size:.78rem;color:rgba(255,255,255,.65);margin-top:.25rem}
 
-/* ABOUT */
+/* PRICES */
+.prices-section{background:var(--green);padding:4rem 0}
+.prices-header{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem;margin-bottom:2rem}
+.prices-updated{display:flex;align-items:center;gap:.4rem;font-size:.72rem;color:rgba(255,255,255,.5);font-style:italic}
+.prices-updated span{color:var(--gold);font-weight:600;font-style:normal}
+.vat-toggle{display:flex;background:rgba(255,255,255,.1);border-radius:50px;padding:3px;gap:0}
+.vat-btn{padding:.45rem 1.2rem;border-radius:50px;border:none;font-family:'Inter',sans-serif;font-size:.82rem;font-weight:600;cursor:pointer;transition:all .2s;background:transparent;color:rgba(255,255,255,.6);letter-spacing:.03em}
+.vat-btn.active{background:var(--gold);color:var(--green)}
+.prices-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.08);border-radius:var(--r);overflow:hidden}
+.price-card{background:rgba(10,42,31,.6);padding:1.4rem 1.2rem;transition:background .2s;position:relative}
+.price-card:hover{background:rgba(10,42,31,.9)}
+.price-card-name{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.4rem}
+.price-card-val{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;color:#fff;line-height:1}
+.price-card-unit{font-size:.7rem;color:rgba(255,255,255,.4);margin-top:.2rem}
+.price-card-badge{position:absolute;top:.8rem;right:.8rem;font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);background:rgba(212,160,23,.15);padding:.15rem .45rem;border-radius:4px}
+.price-card-loading{color:rgba(255,255,255,.2);font-size:.85rem}
+.price-note{margin-top:1.2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem}
+.price-note-text{font-size:.78rem;color:rgba(255,255,255,.45)}
+.price-logistics{display:flex;gap:.5rem;flex-wrap:wrap}
+.log-tag{font-size:.72rem;background:rgba(255,255,255,.07);color:rgba(255,255,255,.55);padding:.25rem .65rem;border-radius:50px}
+.loc-tabs{display:flex;gap:.4rem;flex-wrap:wrap}
+.loc-btn{padding:.35rem .9rem;border-radius:50px;border:1px solid rgba(255,255,255,.25);font-family:'Inter',sans-serif;font-size:.75rem;font-weight:600;cursor:pointer;transition:all .2s;background:transparent;color:rgba(255,255,255,.55)}
+.loc-btn.active{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.5);color:#fff}
+.loc-btn:hover:not(.active){border-color:rgba(255,255,255,.4);color:rgba(255,255,255,.8)}
+.price-na-card{opacity:.35}
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
 .about-img{aspect-ratio:4/5;border-radius:var(--r);overflow:hidden;position:relative}
 .about-img img{width:100%;height:100%;object-fit:cover}
@@ -278,6 +302,17 @@ footer{background:#0A1C13;color:rgba(255,255,255,.65);padding:4rem 0 2rem}
 .footer-copy{font-size:.76rem;color:rgba(255,255,255,.3)}
 
 /* MODAL */
+/* QUICK FORM */
+.quick-form-wrap{background:rgba(255,255,255,.1);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.2);border-radius:20px;padding:1.6rem 2rem;margin-top:2.5rem;max-width:680px;margin-left:auto;margin-right:auto}
+.quick-form-label{font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:.35rem;display:flex;align-items:center;gap:.4rem}
+.quick-form-sub{font-size:.82rem;color:rgba(255,255,255,.6);margin-bottom:1.1rem}
+.quick-form-row{display:flex;gap:.7rem;flex-wrap:wrap}
+.quick-form-row input{flex:1;min-width:130px;padding:.72rem 1.1rem;border:1.5px solid rgba(255,255,255,.25);background:rgba(255,255,255,.12);color:#fff;font-family:'Inter',sans-serif;font-size:.9rem;border-radius:50px;outline:none;transition:border .2s}
+.quick-form-row input::placeholder{color:rgba(255,255,255,.45)}
+.quick-form-row input:focus{border-color:var(--gold)}
+.btn-quick{background:var(--gold);color:var(--green);border:none;padding:.72rem 1.8rem;border-radius:50px;font-family:'Inter',sans-serif;font-weight:700;font-size:.88rem;cursor:pointer;transition:all .2s;white-space:nowrap}
+.btn-quick:hover{background:var(--gold-lt);transform:translateY(-1px)}
+.quick-privacy{font-size:.66rem;color:rgba(255,255,255,.3);margin-top:.7rem;text-align:center}
 .modal-wrap{display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,.6);align-items:center;justify-content:center;padding:1rem}
 .modal-box{background:#fff;max-width:480px;width:100%;padding:2.5rem;position:relative;border-top:3px solid var(--gold);border-radius:var(--r)}
 .modal-close{position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:var(--text3);line-height:1}
@@ -337,6 +372,7 @@ footer{background:#0A1C13;color:rgba(255,255,255,.65);padding:4rem 0 2rem}
     </a>
     <div class="nav-links">
       <a href="#about">Про компанію</a>
+      <a href="#prices" style="color:var(--gold)!important;font-weight:600">Ціни</a>
       <a href="#production">Виробництво</a>
       <a href="#products">Продукція</a>
       <a href="#news">Новини</a>
@@ -405,6 +441,18 @@ footer{background:#0A1C13;color:rgba(255,255,255,.65);padding:4rem 0 2rem}
         <span class="hero-tagline-sep"></span>
         <span>З ПДВ та без ПДВ</span>
       </div>
+
+      <!-- ШВИДКА ФОРМА -->
+      <div class="quick-form-wrap">
+        <div class="quick-form-label">⚡ Дізнатись ціну за 3 хв</div>
+        <div class="quick-form-sub">Залиште ім'я та номер — передзвонимо з актуальною ціною закупівлі</div>
+        <div class="quick-form-row">
+          <input type="text" id="qf-name" placeholder="Ваше ім'я" autocomplete="given-name">
+          <input type="tel" id="qf-phone" placeholder="+38 (0__) ___-__-__" autocomplete="tel">
+          <button class="btn-quick" onclick="submitQuickForm(this)">Дізнатись ціну →</button>
+        </div>
+        <div class="quick-privacy">Не передаємо дані третім особам · Передзвонимо протягом 15 хвилин</div>
+      </div>
     </div>
   </div>
   <div class="hero-float">
@@ -414,6 +462,49 @@ footer{background:#0A1C13;color:rgba(255,255,255,.65);padding:4rem 0 2rem}
   <div class="hero-scroll">
     <div class="hero-scroll-line"></div>
     <span>прокрутити</span>
+  </div>
+</section>
+
+<!-- ЦІНИ -->
+<section class="prices-section" id="prices">
+  <div class="container">
+    <div class="prices-header">
+      <div>
+        <p class="label" style="color:var(--gold)">Актуальні ціни</p>
+        <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;color:#fff;line-height:1.1">Закупівельні ціни сьогодні</h2>
+        <div class="prices-updated" style="margin-top:.4rem">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          Оновлено: <span id="updatedDate" style="color:var(--gold);font-weight:600;font-style:normal">завантаження...</span>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:.8rem">
+        <div class="vat-toggle">
+          <button class="vat-btn active" onclick="setVat('f1',this)">Ф1 · З ПДВ</button>
+          <button class="vat-btn" onclick="setVat('f3',this)">Ф3 · Без ПДВ</button>
+        </div>
+        <div class="loc-tabs">
+          <button class="loc-btn active" onclick="setLoc('piv',this)">Південне</button>
+          <button class="loc-btn" onclick="setLoc('ode',this)">Одесса</button>
+          <button class="loc-btn" onclick="setLoc('chn',this)">Чорноморськ</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="prices-grid" id="pricesGrid">
+      <div style="grid-column:1/-1;text-align:center;padding:2rem;color:rgba(255,255,255,.4);font-size:.9rem">
+        Завантаження цін...
+      </div>
+    </div>
+
+    <div class="price-note" style="margin-top:1.2rem">
+      <div class="price-note-text">💡 Ціни дійсні на дату оновлення · Остаточна ціна залежить від якості та відстані</div>
+      <div class="price-logistics">
+        <span class="log-tag">25–50 км → −350 грн/т</span>
+        <span class="log-tag">50–100 км → −450 грн/т</span>
+        <span class="log-tag">100–200 км → −500–600 грн/т</span>
+        <a href="#contact" style="font-size:.72rem;color:var(--gold);font-weight:600;text-decoration:none">Точний розрахунок →</a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -441,12 +532,49 @@ footer{background:#0A1C13;color:rgba(255,255,255,.65);padding:4rem 0 2rem}
           <div class="adv-item reveal d5"><svg class="adv-ico" viewBox="0 0 24 24"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span>Міжнародні контракти</span></div>
           <div class="adv-item reveal" style="transition-delay:.6s;border-left-color:var(--green-mid)"><svg class="adv-ico" style="stroke:var(--green)" viewBox="0 0 24 24"><path d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2z"/></svg><span>З ПДВ та без ПДВ</span></div>
         </div>
+        <!-- БЛОК ДИРЕКТОР / TikTok -->
+        <a href="https://www.tiktok.com/@nikoliva.m" target="_blank" rel="noopener"
+           style="display:flex;align-items:center;gap:1rem;padding:1rem 1.3rem;background:#000;border-radius:var(--r-sm);margin-top:1rem;text-decoration:none;transition:opacity .2s"
+           onmouseover="this.style.opacity='.88'" onmouseout="this.style.opacity='1'">
+          <div style="width:44px;height:44px;background:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#000"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>
+          </div>
+          <div>
+            <p style="font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.15rem">Директор особисто у TikTok</p>
+            <p style="font-size:.95rem;font-weight:600;color:#fff">@nikoliva.m — ціни, ринок, агро</p>
+          </div>
+          <svg style="margin-left:auto;flex-shrink:0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.4)" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+
         <div class="producer-strip reveal">
           <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
           <div class="producer-strip-t">
             <p>Ми — також виробники</p>
             <p>Власні агровиробничі потужності у Миколаївській області</p>
           </div>
+        </div>
+
+        <!-- ПЕРЕВІРТЕ НАС -->
+        <div class="reveal" style="margin-top:1rem;padding:1rem 1.3rem;background:var(--gray);border-radius:var(--r-sm);border:1px solid var(--gray2)">
+          <p style="font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);margin-bottom:.7rem">🔍 Перевірте нас</p>
+          <div style="display:flex;gap:.7rem;flex-wrap:wrap;align-items:center">
+            <a href="https://opendatabot.ua/c/46097237" target="_blank" rel="noopener"
+               style="display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1rem;background:#fff;border:1.5px solid var(--gray2);border-radius:50px;font-size:.82rem;font-weight:600;color:var(--text);transition:all .2s;text-decoration:none"
+               onmouseover="this.style.borderColor='var(--green)';this.style.color='var(--green)'"
+               onmouseout="this.style.borderColor='var(--gray2)';this.style.color='var(--text)'">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+              Opendatabot
+            </a>
+            <a href="https://youcontrol.com.ua/catalog/company_details/46097237/" target="_blank" rel="noopener"
+               style="display:inline-flex;align-items:center;gap:.5rem;padding:.5rem 1rem;background:#fff;border:1.5px solid var(--gray2);border-radius:50px;font-size:.82rem;font-weight:600;color:var(--text);transition:all .2s;text-decoration:none"
+               onmouseover="this.style.borderColor='var(--green)';this.style.color='var(--green)'"
+               onmouseout="this.style.borderColor='var(--gray2)';this.style.color='var(--text)'">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              YouControl
+            </a>
+            <span style="font-size:.78rem;color:var(--text3)">ЄДРПОУ: <strong style="color:var(--text);font-family:monospace">46097237</strong></span>
+          </div>
+          <p style="font-size:.72rem;color:var(--text3);margin-top:.6rem">Компанія зареєстрована, активна, без боргів та судових справ</p>
         </div>
       </div>
     </div>
@@ -488,7 +616,7 @@ footer{background:#0A1C13;color:rgba(255,255,255,.65);padding:4rem 0 2rem}
         <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
         <span class="svc-num">03</span>
         <h3>Оперативний розрахунок</h3>
-        <p>Розрахунок після здачі — готівкою або безготівково. Робота з ПДВ та без ПДВ. Документи оформлюємо повністю.</p>
+        <p>Розрахунок після здачі — безготівковий переказ. Робота з ПДВ та без ПДВ. Документи оформлюємо повністю.</p>
       </div>
       <div class="svc-card reveal d1">
         <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg></div>
@@ -756,7 +884,7 @@ footer{background:#0A1C13;color:rgba(255,255,255,.65);padding:4rem 0 2rem}
       <div class="proc-step reveal d3"><div class="proc-circle"><svg viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div><h4>Договір</h4><p>Підписуємо договір купівлі-продажу, узгоджуємо терміни</p></div>
       <div class="proc-step reveal d4"><div class="proc-circle"><svg viewBox="0 0 24 24"><path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"/><path d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10l3 1 4-1 3 1z"/></svg></div><h4>Вивіз</h4><p>Організовуємо транспорт або приймаємо на елеватор — зручно для вас</p></div>
       <div class="proc-step reveal d5"><div class="proc-circle"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><h4>Зважування</h4><p>Зважування, відбір проб та лабораторний аналіз — прозоро за вашої присутності</p></div>
-      <div class="proc-step reveal" style="transition-delay:.6s"><div class="proc-circle"><svg viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><h4>Оплата</h4><p>Розрахунок в день відвантаження — готівка або безготівково, з ПДВ або без ПДВ</p></div>
+      <div class="proc-step reveal" style="transition-delay:.6s"><div class="proc-circle"><svg viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><h4>Оплата</h4><p>Розрахунок в день відвантаження — безготівковий переказ з ПДВ або без ПДВ</p></div>
     </div>
   </div>
 </section>
@@ -809,18 +937,18 @@ footer{background:#0A1C13;color:rgba(255,255,255,.65);padding:4rem 0 2rem}
           <div class="ci-item"><div class="ci-icon"><svg viewBox="0 0 24 24"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div><div><div class="ci-label">Email</div><div class="ci-value">olitsaragro@gmail.com</div></div></div>
         </div>
         <div class="messengers">
-          <a href="#" class="msg-btn msg-tg"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 3L3 10.5l7 1.5 2 7 3.5-3 4.5 3 1-16z"/></svg>Telegram</a>
-          <a href="#" class="msg-btn msg-vb"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 012-2h3l2 4-2.5 1.5A11 11 0 0015.5 16L17 13.5l4 2v3a2 2 0 01-2 2C8.5 21 3 14.5 3 8V5z"/></svg>Viber</a>
-          <a href="#" class="msg-btn msg-wa"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 012-2h3l2 4-2.5 1.5A11 11 0 0015.5 16L17 13.5l4 2v3a2 2 0 01-2 2C8.5 21 3 14.5 3 8V5z"/></svg>WhatsApp</a>
+          <a href="https://t.me/+380997457326" target="_blank" class="msg-btn msg-tg"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 3L3 10.5l7 1.5 2 7 3.5-3 4.5 3 1-16z"/></svg>Telegram</a>
+          <a href="viber://chat?number=%2B380997457326" class="msg-btn msg-vb"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 012-2h3l2 4-2.5 1.5A11 11 0 0015.5 16L17 13.5l4 2v3a2 2 0 01-2 2C8.5 21 3 14.5 3 8V5z"/></svg>Viber</a>
+          <a href="https://wa.me/380997457326" target="_blank" class="msg-btn msg-wa"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 012-2h3l2 4-2.5 1.5A11 11 0 0015.5 16L17 13.5l4 2v3a2 2 0 01-2 2C8.5 21 3 14.5 3 8V5z"/></svg>WhatsApp</a>
+          <a href="https://www.tiktok.com/@nikoliva.m" target="_blank" class="msg-btn" style="border-color:#000;color:#000" onmouseover="this.style.background='#000';this.style.color='#fff'" onmouseout="this.style.background='';this.style.color='#000'">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>
+            TikTok
+          </a>
         </div>
         <div class="req-block">
-          <div class="req-head"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg><span>Банківські реквізити</span></div>
-          <div class="req-body">
-            <span class="req-k">Отримувач</span><span class="req-v" style="font-weight:600">ТОВ «ОЛІТСАР АГРО ГРУП»</span>
+          <div class="req-body" style="padding:1.1rem 1.3rem">
+            <span class="req-k">Назва</span><span class="req-v" style="font-weight:600">ТОВ «ОЛІТСАР АГРО ГРУП»</span>
             <span class="req-k">Код ЄДРПОУ</span><span class="req-v mono">46097237</span>
-            <span class="req-k">IBAN</span><span class="req-v mono">UA73 3348 5100 0000 0026 0023 35045</span>
-            <span class="req-k">Банк</span><span class="req-v">АТ «ПУМБ»</span>
-            <span class="req-k">МФО</span><span class="req-v mono">334851</span>
           </div>
           <div class="req-vat"><svg viewBox="0 0 24 24"><path d="M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2z"/></svg><span>Працюємо з ПДВ та без ПДВ</span></div>
         </div>
@@ -840,7 +968,7 @@ footer{background:#0A1C13;color:rgba(255,255,255,.65);padding:4rem 0 2rem}
           </select>
         </div>
         <div class="fg"><label>Повідомлення</label><textarea placeholder="Обсяг, умови поставки, місцезнаходження, терміни..."></textarea></div>
-        <button class="btn-submit" onclick="handleSubmit(this)">Надіслати заявку →</button>
+        <button class="btn-submit" onclick="submitContactForm(this)">Надіслати заявку →</button>
         <p style="font-size:.73rem;color:var(--text3);margin-top:1rem;text-align:center">Ми відповідаємо протягом 1 робочого дня. Конфіденційність гарантована.</p>
       </div>
     </div>
@@ -855,6 +983,12 @@ footer{background:#0A1C13;color:rgba(255,255,255,.65);padding:4rem 0 2rem}
         <div class="footer-brand-name">🌾 ОЛІТСАР АГРО ГРУП</div>
         <div class="footer-brand-sub">Grain Trading · Ukraine</div>
         <p class="footer-desc">Закуповуємо зернові та олійні культури у виробників України. Власні потужності у Миколаївській обл. З ПДВ та без ПДВ.</p>
+        <div style="display:flex;gap:.6rem;margin-top:1.2rem;flex-wrap:wrap">
+          <a href="https://t.me/+380997457326" target="_blank" style="width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;transition:background .2s" onmouseover="this.style.background='#229ED9'" onmouseout="this.style.background='rgba(255,255,255,.08)'"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M21 3L3 10.5l7 1.5 2 7 3.5-3 4.5 3 1-16z"/></svg></a>
+          <a href="viber://chat?number=%2B380997457326" style="width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;transition:background .2s" onmouseover="this.style.background='#7360F2'" onmouseout="this.style.background='rgba(255,255,255,.08)'"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M3 5a2 2 0 012-2h3l2 4-2.5 1.5A11 11 0 0015.5 16L17 13.5l4 2v3a2 2 0 01-2 2C8.5 21 3 14.5 3 8V5z"/></svg></a>
+          <a href="https://wa.me/380997457326" target="_blank" style="width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;transition:background .2s" onmouseover="this.style.background='#25D366'" onmouseout="this.style.background='rgba(255,255,255,.08)'"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M3 5a2 2 0 012-2h3l2 4-2.5 1.5A11 11 0 0015.5 16L17 13.5l4 2v3a2 2 0 01-2 2C8.5 21 3 14.5 3 8V5z"/></svg></a>
+          <a href="https://www.tiktok.com/@nikoliva.m" target="_blank" style="width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;transition:background .2s" onmouseover="this.style.background='rgba(255,255,255,.2)'" onmouseout="this.style.background='rgba(255,255,255,.08)'"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg></a>
+        </div>
       </div>
       <div>
         <div class="footer-col-title">Продукція</div>
@@ -913,6 +1047,249 @@ footer{background:#0A1C13;color:rgba(255,255,255,.65);padding:4rem 0 2rem}
 </div>
 
 <script>
+/* ── FORMSPREE CONFIG ── */
+const FORMSPREE = 'https://formspree.io/f/xqeopoaw';
+
+async function sendToFormspree(data){
+  const res = await fetch(FORMSPREE, {
+    method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body: JSON.stringify(data)
+  });
+  return res.ok;
+}
+
+/* QUICK FORM */
+async function submitQuickForm(btn){
+  const name=document.getElementById('qf-name').value.trim();
+  const phone=document.getElementById('qf-phone').value.trim();
+  if(!name||!phone){
+    [document.getElementById('qf-name'),document.getElementById('qf-phone')].forEach(el=>{
+      el.style.borderColor='rgba(232,80,80,.8)';
+      setTimeout(()=>el.style.borderColor='',1500);
+    });
+    return;
+  }
+  const orig=btn.textContent;
+  btn.textContent='Надсилаємо...';btn.disabled=true;
+  const ok = await sendToFormspree({
+    _subject: '⚡ Швидка заявка з сайту',
+    Імя: name,
+    Телефон: phone,
+    Форма: 'Швидка форма (герой)'
+  });
+  if(ok){
+    btn.textContent='✓ Передзвонимо!';btn.style.background='#2E7D5A';btn.style.color='#fff';
+    document.getElementById('qf-name').value='';
+    document.getElementById('qf-phone').value='';
+  } else {
+    btn.textContent='Помилка — спробуйте ще';btn.style.background='#c0392b';btn.style.color='#fff';
+  }
+  setTimeout(()=>{btn.textContent=orig;btn.disabled=false;btn.style.background='';btn.style.color='';},3500);
+}
+
+/* CONTACT FORM */
+async function submitContactForm(btn){
+  const form = btn.closest('.contact-form');
+  const inputs = form.querySelectorAll('input,textarea,select');
+  const data = {_subject:'📬 Заявка з сайту — Контакти', Форма:'Контактна форма'};
+  const labels = ['Імя','Телефон','Email','Культура','Повідомлення'];
+  inputs.forEach((el,i)=>{ if(el.value.trim()) data[labels[i]||el.placeholder]=el.value.trim(); });
+  const orig=btn.textContent;
+  btn.textContent='Надсилаємо...';btn.disabled=true;
+  const ok = await sendToFormspree(data);
+  if(ok){
+    btn.textContent='✓ Заявку надіслано!';btn.style.background='#2E7D5A';
+    inputs.forEach(el=>el.value='');
+  } else {
+    btn.textContent='Помилка — спробуйте ще';btn.style.background='#c0392b';
+  }
+  setTimeout(()=>{btn.textContent=orig;btn.disabled=false;btn.style.background='';},3500);
+}
+
+/* MODAL FORM */
+async function submitModalForm(btn){
+  const modal = btn.closest('.modal-box');
+  const inputs = modal.querySelectorAll('input,textarea');
+  const crop = document.getElementById('modal-crop').textContent;
+  const data = {_subject:`🌾 Заявка: ${crop}`, Культура:crop, Форма:'Картка продукту'};
+  const labels = ['Імя','Телефон','Обсяг','Коментар'];
+  inputs.forEach((el,i)=>{ if(el.value.trim()) data[labels[i]]=el.value.trim(); });
+  const orig=btn.textContent;
+  btn.textContent='Надсилаємо...';btn.disabled=true;
+  const ok = await sendToFormspree(data);
+  if(ok){
+    btn.textContent='✓ Заявку надіслано!';btn.style.background='#2E7D5A';
+    inputs.forEach(el=>el.value='');
+    setTimeout(()=>closeModal(),2000);
+  } else {
+    btn.textContent='Помилка — спробуйте ще';btn.style.background='#c0392b';
+  }
+  setTimeout(()=>{btn.textContent=orig;btn.disabled=false;btn.style.background='';},3500);
+}
+
+/* SUBMIT (modal fallback) */
+function handleSubmit(btn){ submitModalForm(btn); }
+
+/* ── PRICES ── */
+const PUBLISHED_CSV = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRsOPYWYLqn5HnxBB4Dn8xYxg169UAMlATnJ6SFfINuN09gnBLbbJyfCjmVlf_XRfd28CGf-xU3V-0a/pub?output=csv&gid=0';
+let allPrices = {}; // { 'Пшениця 3 кл': { f1:{piv,ode,chn}, f3:{piv,ode,chn} } }
+let currentVat = 'f1';
+let currentLoc = 'piv';
+const LOC_LABELS = { piv:'Південне', ode:'Одесса', chn:'Чорноморськ' };
+const DSTU = {
+  'Пшениця 2 кл':'ДСТУ 3768','Пшениця 3 кл':'ДСТУ 3768','Пшениця 4 кл':'ДСТУ 3768',
+  'Горох':'ДСТУ 4523','Ячмінь':'ДСТУ 3769','Кукурудза':'ДСТУ 4525',
+  'Соя ГМО':'ДСТУ 4964','Соняшник 48%':'ДСТУ 7011','Ріпак':'ДСТУ 4966'
+};
+
+function fmt(v){ return (v && v>0) ? Number(v).toLocaleString('uk-UA') : null; }
+
+function renderPrices(){
+  const grid = document.getElementById('pricesGrid');
+  const crops = Object.keys(allPrices);
+  if(!crops.length){ grid.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:2rem;color:rgba(255,255,255,.4)">Ціни завантажуються...</div>'; return; }
+
+  let html = '';
+  crops.forEach(name => {
+    const p = allPrices[name];
+    const val = p[currentVat] ? p[currentVat][currentLoc] : null;
+    const display = fmt(val);
+    const isNA = !display;
+    const dstu = DSTU[name] || '';
+    const unit = name.includes('Соняшник') ? `грн/т` : name.includes('Соя') ? `грн/т` : 'грн/т';
+    html += `<div class="price-card${isNA?' price-na-card':''}">
+      <div class="price-card-name">${name}</div>
+      <div class="price-card-val">${display || '—'}</div>
+      <div class="price-card-unit">${unit}</div>
+      ${dstu ? `<span class="price-card-badge">${dstu}</span>` : ''}
+    </div>`;
+  });
+
+  // CTA card
+  html += `<div class="price-card" style="display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;text-align:center" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+    <div style="font-size:2rem;margin-bottom:.5rem">📞</div>
+    <div style="font-size:.82rem;font-weight:600;color:var(--gold);line-height:1.4">Інша культура<br>або обсяг?</div>
+    <div style="font-size:.72rem;color:rgba(255,255,255,.45);margin-top:.4rem">Зателефонуйте нам</div>
+  </div>`;
+  grid.innerHTML = html;
+}
+
+function setVat(vat, btn){
+  currentVat = vat;
+  document.querySelectorAll('.vat-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderPrices();
+}
+
+function setLoc(loc, btn){
+  currentLoc = loc;
+  document.querySelectorAll('.loc-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderPrices();
+}
+
+function parseCSV(text){
+  return text.split('\n').map(row=>{
+    const cols=[];let cur='',inQ=false;
+    for(let ch of row){
+      if(ch==='"'){inQ=!inQ;}
+      else if(ch===','&&!inQ){cols.push(cur.trim());cur='';}
+      else cur+=ch;
+    }
+    cols.push(cur.trim());
+    return cols;
+  });
+}
+
+async function fetchPrices(){
+  try {
+    const url = PUBLISHED_CSV;
+    const res = await fetch(url);
+    if(!res.ok) throw new Error('fetch failed');
+    const text = await res.text();
+    const rows = parseCSV(text);
+
+    // знаходимо рядок з "КУЛЬТУРА"
+    let hRow = -1;
+    rows.forEach((r,i)=>{ if(r.join('').includes('КУЛЬТУРА')) hRow=i; });
+    if(hRow<0) throw new Error('no header');
+
+    const data = {};
+    let mode = 'grain'; // grain | soy | sunf
+    let soyLoc='', sunfLoc='';
+
+    rows.slice(hRow+1).forEach(r=>{
+      const name = (r[1]||'').trim();
+      if(!name) return;
+
+      // визначаємо секцію
+      if(name.toLowerCase().includes('соя')) { mode='soy'; return; }
+      if(name.toLowerCase().includes('соняшник')) { mode='sunf'; return; }
+      if(name.toLowerCase().includes('ріпак')) { mode='rape'; return; }
+
+      if(mode==='grain'){
+        const f1piv=parseInt(r[2])||0, f3piv=parseInt(r[3])||0;
+        const f1ode=parseInt(r[4])||0, f3ode=parseInt(r[5])||0;
+        const f1chn=parseInt(r[6])||0, f3chn=parseInt(r[7])||0;
+        if(f1piv||f3piv||f1ode||f3ode||f1chn||f3chn){
+          data[name]={
+            f1:{piv:f1piv, ode:f1ode, chn:f1chn},
+            f3:{piv:f3piv, ode:f3ode, chn:f3chn}
+          };
+        }
+      }
+
+      if(mode==='soy'){
+        // рядки типу: ,Умань,17000 або ,,,0,16900
+        const p1=parseInt(r[2])||0, p2=parseInt(r[4])||0;
+        const price = p1||p2;
+        if(price && !data['Соя ГМО']){
+          const isF3 = !p1 && p2;
+          if(isF3){
+            data['Соя ГМО']={f1:{piv:0,ode:price,chn:0},f3:{piv:price,ode:price,chn:0}};
+          } else {
+            data['Соя ГМО']={f1:{piv:price,ode:price,chn:0},f3:{piv:Math.round(price/1.2),ode:Math.round(price/1.2),chn:0}};
+          }
+        }
+      }
+
+      if(mode==='sunf'){
+        // шукаємо рядок де є і Ф1 і Ф3 (напр. Кропивницький,31000,26950)
+        const p1=parseInt(r[2])||0;
+        const p2=parseInt(r[3])||0;
+        if(p1 && p2 && !data['Соняшник 48%']){
+          // є обидві ціни
+          data['Соняшник 48%']={f1:{piv:p1,ode:0,chn:0},f3:{piv:p2,ode:0,chn:0}};
+        } else if(p1 && !data['Соняшник 48%']){
+          // є тільки Ф1
+          data['Соняшник 48%']={f1:{piv:p1,ode:0,chn:0},f3:{piv:0,ode:0,chn:0}};
+        }
+      }
+    });
+
+    allPrices = data;
+    const d = new Date();
+    document.getElementById('updatedDate').textContent =
+      d.toLocaleDateString('uk-UA',{day:'numeric',month:'long',year:'numeric'});
+    renderPrices();
+  } catch(e){
+    console.warn('Sheet fetch failed, using fallback', e.message);
+    allPrices = {
+      'Пшениця 4 кл':{f1:{piv:10800,ode:9850, chn:9700}, f3:{piv:9350,ode:8550,chn:8400}},
+      'Пшениця 3 кл':{f1:{piv:10900,ode:10350,chn:10300},f3:{piv:9450,ode:9000,chn:8950}},
+      'Пшениця 2 кл':{f1:{piv:11000,ode:10450,chn:10400},f3:{piv:9550,ode:9050,chn:9000}},
+      'Ячмінь':      {f1:{piv:10050,ode:0,    chn:10000},f3:{piv:8700,ode:0,   chn:0}},
+      'Кукурудза':   {f1:{piv:9600, ode:9400, chn:9400}, f3:{piv:8300,ode:0,   chn:8150}},
+      'Соя ГМО':     {f1:{piv:22000,ode:0,    chn:0},    f3:{piv:0,   ode:0,   chn:0}},
+      'Соняшник 48%':{f1:{piv:31000,ode:0,    chn:31000},f3:{piv:26950,ode:0,  chn:0}},
+    };
+    document.getElementById('updatedDate').textContent = 'оновіть доступ до таблиці';
+    renderPrices();
+  }
+}
+fetchPrices();
+
 /* NAV */
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60),{passive:true});
@@ -986,15 +1363,7 @@ function closeModal(){
 }
 document.getElementById('modal').addEventListener('click',function(e){if(e.target===this)closeModal()});
 
-/* SUBMIT */
-function handleSubmit(btn){
-  const orig=btn.textContent;
-  btn.textContent='Надсилаємо...';btn.disabled=true;
-  setTimeout(()=>{
-    btn.textContent='✓ Заявку надіслано!';btn.style.background='#2E7D5A';
-    setTimeout(()=>{btn.textContent=orig;btn.disabled=false;btn.style.background='';closeModal();},2500);
-  },1200);
-}
+
 </script>
 </body>
 </html>
