@@ -10,7 +10,10 @@
 <meta property="og:description" content="Закуповуємо зернові та олійні культури у виробників. Швидкий розрахунок, з ПДВ та без ПДВ.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="uk_UA">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"ТОВ ОЛІТСАР АГРО ГРУП","description":"Українська зернотрейдингова компанія","address":{"@type":"PostalAddress","streetAddress":"вул. Ґедройця Єжи, 6, офіс 2038","addressLocality":"Київ","postalCode":"03150","addressCountry":"UA"},"telephone":"+380997457326","email":"olitsaragro@gmail.com"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"ТОВ ОЛІТСАР АГРО ГРУП","description":"Закупівля зернових та олійних культур у виробників України. Пшениця, кукурудза, ячмінь, соняшник, соя, ріпак.","url":"https://olitsaragro.com.ua","telephone":"+380997457326","email":"olitsaragro@gmail.com","address":{"@type":"PostalAddress","streetAddress":"вул. Ґедройця Єжи, 6, офіс 2038","addressLocality":"Київ","postalCode":"03150","addressCountry":"UA"},"sameAs":["https://www.tiktok.com/@nikoliva.m"],"openingHours":"Mo-Fr 09:00-18:00","priceRange":"грн","currenciesAccepted":"UAH","paymentAccepted":"Bank Transfer"}</script>
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://api.rss2json.com">
+<link rel="dns-prefetch" href="https://docs.google.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -147,6 +150,60 @@ h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;line-height:1.15}
 .producer-strip svg{width:22px;height:22px;fill:none;stroke:var(--gold);stroke-width:1.8;flex-shrink:0}
 .producer-strip-t p:first-child{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
 .producer-strip-t p:last-child{font-size:.85rem;color:rgba(255,255,255,.8);margin-top:.1rem}
+
+/* CHЕСНА ЗЕМЛЯ */
+.cz-section{background:linear-gradient(135deg,#0A2A1E 0%,#0F3D2E 60%,#0d3326 100%);padding:5rem 0;position:relative;overflow:hidden}
+.cz-section::before{content:'';position:absolute;top:-60px;right:-60px;width:320px;height:320px;background:radial-gradient(circle,rgba(212,160,23,.12) 0%,transparent 70%);pointer-events:none}
+.cz-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:center}
+.cz-badge{display:inline-flex;align-items:center;gap:.6rem;background:rgba(212,160,23,.15);border:1px solid rgba(212,160,23,.35);padding:.45rem 1rem;border-radius:50px;margin-bottom:1.4rem}
+.cz-badge span{font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold)}
+.cz-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:700;color:#fff;line-height:1.1;margin-bottom:1.2rem}
+.cz-title em{font-style:italic;color:var(--gold-lt)}
+.cz-desc{font-size:.95rem;color:rgba(255,255,255,.72);line-height:1.78;margin-bottom:2rem}
+.cz-features{display:flex;flex-direction:column;gap:.8rem;margin-bottom:2rem}
+.cz-feature{display:flex;align-items:flex-start;gap:.9rem;padding:.9rem 1.1rem;background:rgba(255,255,255,.05);border-radius:var(--r-sm);border-left:2px solid var(--gold)}
+.cz-feature-icon{font-size:1.3rem;flex-shrink:0;margin-top:.1rem}
+.cz-feature-text strong{display:block;font-size:.88rem;font-weight:600;color:#fff;margin-bottom:.15rem}
+.cz-feature-text span{font-size:.8rem;color:rgba(255,255,255,.55);line-height:1.55}
+.cz-card{background:rgba(255,255,255,.07);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.12);border-radius:var(--r);padding:2.5rem;text-align:center}
+.cz-card-icon{font-size:3.5rem;margin-bottom:1rem}
+.cz-card-title{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--gold);margin-bottom:.5rem}
+.cz-card-sub{font-size:.82rem;color:rgba(255,255,255,.5);margin-bottom:1.5rem;line-height:1.6}
+.cz-card-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.08);border-radius:var(--r-sm);overflow:hidden;margin-bottom:1.5rem}
+.cz-stat{padding:1rem;background:rgba(0,0,0,.2);text-align:center}
+.cz-stat-n{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:#fff}
+.cz-stat-l{font-size:.65rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-top:.1rem}
+@media(max-width:1024px){.cz-grid{grid-template-columns:1fr;gap:3rem}}
+.calc-section{padding:5rem 0}
+.calc-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:4rem;align-items:start;margin-top:2.5rem}
+.calc-box{background:var(--white);border-radius:var(--r);padding:2.2rem;box-shadow:var(--shadow)}
+.calc-box h3{font-size:1.5rem;color:var(--green);margin-bottom:1.5rem}
+.calc-field{margin-bottom:1.1rem}
+.calc-field label{display:block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text2);margin-bottom:.4rem}
+.calc-field select,.calc-field input[type=number]{width:100%;padding:.75rem 1rem;border:1.5px solid var(--gray2);border-radius:var(--r-sm);font-family:'Inter',sans-serif;font-size:.92rem;color:var(--text);outline:none;transition:border .2s;background:var(--white)}
+.calc-field select:focus,.calc-field input:focus{border-color:var(--green)}
+.calc-vat-row{display:flex;gap:.6rem;margin-bottom:1.1rem}
+.calc-vat-btn{flex:1;padding:.65rem;border:1.5px solid var(--gray2);background:var(--white);border-radius:var(--r-sm);font-family:'Inter',sans-serif;font-size:.82rem;font-weight:600;cursor:pointer;transition:all .2s;color:var(--text2)}
+.calc-vat-btn.active{background:var(--green);color:#fff;border-color:var(--green)}
+.calc-result{margin-top:1.4rem;padding:1.5rem;background:var(--gray);border-radius:var(--r-sm);border-left:4px solid var(--gold)}
+.calc-result-row{display:flex;justify-content:space-between;align-items:center;padding:.38rem 0;font-size:.9rem}
+.calc-result-row:not(:last-child){border-bottom:1px solid var(--gray2)}
+.calc-result-label{color:var(--text3);font-weight:500}
+.calc-result-val{font-weight:600;color:var(--text)}
+.calc-result-final{margin-top:.8rem;padding:1rem 1.2rem;background:var(--green);border-radius:var(--r-sm);display:flex;justify-content:space-between;align-items:center}
+.calc-result-final-label{font-size:.82rem;font-weight:600;color:rgba(255,255,255,.75)}
+.calc-result-final-val{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;color:var(--gold)}
+.log-table-wrap{background:var(--white);border-radius:var(--r);padding:2.2rem;box-shadow:var(--shadow)}
+.log-table-wrap h3{font-size:1.5rem;color:var(--green);margin-bottom:.35rem}
+.log-table-sub{font-size:.82rem;color:var(--text3);margin-bottom:1.2rem}
+.log-table{width:100%;border-collapse:collapse;font-size:.82rem}
+.log-table th{background:var(--green);color:#fff;padding:.5rem .8rem;text-align:left;font-weight:600;font-size:.7rem;letter-spacing:.07em;text-transform:uppercase}
+.log-table th:not(:first-child){text-align:right}
+.log-table td{padding:.4rem .8rem;border-bottom:1px solid var(--gray2);color:var(--text2)}
+.log-table td:not(:first-child){text-align:right;font-weight:500;font-variant-numeric:tabular-nums}
+.log-table tr:hover td{background:var(--gray)}
+.log-table tr.log-active td{background:rgba(212,160,23,.12)!important;font-weight:700;color:var(--green)}
+@media(max-width:1024px){.calc-grid{grid-template-columns:1fr}}
 
 /* SERVICES */
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
@@ -324,7 +381,21 @@ footer{background:#0A1C13;color:rgba(255,255,255,.65);padding:4rem 0 2rem}
 .reveal.visible,.reveal-l.visible,.reveal-r.visible{opacity:1;transform:none}
 .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}.d5{transition-delay:.5s}
 
-/* RESPONSIVE */
+/* FLOATING CALL BTN */
+.float-call{display:none;position:fixed;bottom:1.5rem;right:1.5rem;z-index:900;background:var(--green);color:#fff;width:58px;height:58px;border-radius:50%;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(15,61,46,.4);text-decoration:none;transition:transform .2s,background .2s;animation:ring 3s ease-in-out infinite}
+.float-call:hover{background:var(--green-mid);transform:scale(1.08)}
+.float-call svg{width:26px;height:26px;fill:none;stroke:#fff;stroke-width:2}
+@keyframes ring{0%,100%{transform:scale(1)}85%{transform:scale(1)}90%{transform:scale(1.1)}95%{transform:scale(1)}}
+@media(max-width:768px){.float-call{display:flex}}
+
+/* NEWS SKELETON */
+.news-skeleton{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.news-skel-card{background:var(--white);border-radius:var(--r);overflow:hidden}
+.news-skel-img{height:160px;background:linear-gradient(90deg,var(--gray2) 25%,#e0e0e0 50%,var(--gray2) 75%);background-size:200% 100%;animation:shimmer 1.5s infinite}
+.news-skel-body{padding:1.5rem;display:flex;flex-direction:column;gap:.7rem}
+.news-skel-line{height:.75rem;background:linear-gradient(90deg,var(--gray2) 25%,#e0e0e0 50%,var(--gray2) 75%);background-size:200% 100%;animation:shimmer 1.5s infinite;border-radius:4px}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+@media(max-width:768px){.news-skeleton{grid-template-columns:1fr}}
 @media(max-width:1024px){
   .about-grid,.contact-grid{grid-template-columns:1fr;gap:3rem}
   .services-grid{grid-template-columns:1fr 1fr}
@@ -372,6 +443,7 @@ footer{background:#0A1C13;color:rgba(255,255,255,.65);padding:4rem 0 2rem}
     </a>
     <div class="nav-links">
       <a href="#about">Про компанію</a>
+      <a href="#chesna-zemlya" style="color:var(--gold-lt)!important">ГО «Чесна Земля»</a>
       <a href="#prices" style="color:var(--gold)!important;font-weight:600">Ціни</a>
       <a href="#production">Виробництво</a>
       <a href="#products">Продукція</a>
@@ -445,13 +517,13 @@ footer{background:#0A1C13;color:rgba(255,255,255,.65);padding:4rem 0 2rem}
       <!-- ШВИДКА ФОРМА -->
       <div class="quick-form-wrap">
         <div class="quick-form-label">⚡ Дізнатись ціну за 3 хв</div>
-        <div class="quick-form-sub">Залиште ім'я та номер — передзвонимо з актуальною ціною закупівлі</div>
+        <div class="quick-form-sub">Залиште ім'я та номер — зв'яжемось і назвемо актуальну ціну закупівлі</div>
         <div class="quick-form-row">
           <input type="text" id="qf-name" placeholder="Ваше ім'я" autocomplete="given-name">
           <input type="tel" id="qf-phone" placeholder="+38 (0__) ___-__-__" autocomplete="tel">
           <button class="btn-quick" onclick="submitQuickForm(this)">Дізнатись ціну →</button>
         </div>
-        <div class="quick-privacy">Не передаємо дані третім особам · Передзвонимо протягом 15 хвилин</div>
+        <div class="quick-privacy">Не передаємо дані третім особам · Зв'яжемось у найближчий робочий час</div>
       </div>
     </div>
   </div>
@@ -498,12 +570,6 @@ footer{background:#0A1C13;color:rgba(255,255,255,.65);padding:4rem 0 2rem}
 
     <div class="price-note" style="margin-top:1.2rem">
       <div class="price-note-text">💡 Ціни дійсні на дату оновлення · Остаточна ціна залежить від якості та відстані</div>
-      <div class="price-logistics">
-        <span class="log-tag">25–50 км → −350 грн/т</span>
-        <span class="log-tag">50–100 км → −450 грн/т</span>
-        <span class="log-tag">100–200 км → −500–600 грн/т</span>
-        <a href="#contact" style="font-size:.72rem;color:var(--gold);font-weight:600;text-decoration:none">Точний розрахунок →</a>
-      </div>
     </div>
   </div>
 </section>
@@ -576,6 +642,72 @@ footer{background:#0A1C13;color:rgba(255,255,255,.65);padding:4rem 0 2rem}
           </div>
           <p style="font-size:.72rem;color:var(--text3);margin-top:.6rem">Компанія зареєстрована, активна, без боргів та судових справ</p>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ЧЕСНА ЗЕМЛЯ -->
+<section class="cz-section" id="chesna-zemlya">
+  <div class="container">
+    <div class="cz-grid">
+      <div class="reveal-l">
+        <div class="cz-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>Громадська організація</span>
+        </div>
+        <h2 class="cz-title">ГО <em>«ЧЕСНА ЗЕМЛЯ»</em></h2>
+        <p class="cz-desc">Ми не просто купуємо зерно — ми допомагаємо малим фермерам розібратись у своїх правах, легалізувати бізнес та продавати врожай вигідно і прозоро. Наша громадська організація створена саме для цього.</p>
+
+        <div class="cz-features">
+          <div class="cz-feature">
+            <span class="cz-feature-icon">📋</span>
+            <div class="cz-feature-text">
+              <strong>Легалізація фермерського бізнесу</strong>
+              <span>Допомагаємо оформити ФОП або юридичну особу, розібратись з реєстрацією платника ПДВ та бухгалтерією</span>
+            </div>
+          </div>
+          <div class="cz-feature">
+            <span class="cz-feature-icon">💰</span>
+            <div class="cz-feature-text">
+              <strong>Як продати зерно вигідно і в білу</strong>
+              <span>Консультації щодо схем продажу, різниці між Ф1/Ф3, умов договорів та захисту від недобросовісних покупців</span>
+            </div>
+          </div>
+          <div class="cz-feature">
+            <span class="cz-feature-icon">🤝</span>
+            <div class="cz-feature-text">
+              <strong>Безкоштовно для малих господарств</strong>
+              <span>Всі консультації — безкоштовні. Ми зацікавлені у тому, щоб фермери працювали чесно та отримували справедливу ціну</span>
+            </div>
+          </div>
+          <div class="cz-feature">
+            <span class="cz-feature-icon">⚖️</span>
+            <div class="cz-feature-text">
+              <strong>Захист прав виробника</strong>
+              <span>Допомагаємо розібратись у спірних ситуаціях, перевірити контрагента та скласти юридично грамотний договір</span>
+            </div>
+          </div>
+        </div>
+
+        <a href="#contact" class="btn btn-gold" style="font-size:.92rem;padding:.85rem 2rem">
+          Отримати безкоштовну консультацію →
+        </a>
+      </div>
+
+      <div class="cz-card reveal-r">
+        <div class="cz-card-icon">🌱</div>
+        <div class="cz-card-title">«ЧЕСНА ЗЕМЛЯ»</div>
+        <div class="cz-card-sub">Громадська організація підтримки малих аграрних виробників України</div>
+        <div class="cz-card-stats">
+          <div class="cz-stat"><div class="cz-stat-n">50+</div><div class="cz-stat-l">Фермерів<br>проконсультовано</div></div>
+          <div class="cz-stat"><div class="cz-stat-n">0 грн</div><div class="cz-stat-l">Вартість<br>консультації</div></div>
+          <div class="cz-stat"><div class="cz-stat-n">Ф1/Ф3</div><div class="cz-stat-l">Працюємо<br>з ПДВ і без</div></div>
+          <div class="cz-stat"><div class="cz-stat-n">24/7</div><div class="cz-stat-l">Онлайн<br>підтримка</div></div>
+        </div>
+        <p style="font-size:.8rem;color:rgba(255,255,255,.45);line-height:1.65;border-top:1px solid rgba(255,255,255,.1);padding-top:1.2rem">
+          «Кожен фермер має право отримати справедливу ціну за свою працю. Ми допомагаємо це зробити законно та вигідно.»
+        </p>
       </div>
     </div>
   </div>
@@ -897,29 +1029,27 @@ footer{background:#0A1C13;color:rgba(255,255,255,.65);padding:4rem 0 2rem}
         <p class="label reveal">Аналітика та новини</p>
         <h2 class="section-title reveal" style="margin-bottom:0">Новини ринку</h2>
       </div>
-      <span class="live-badge" style="margin-bottom:.3rem">RSS · Автооновлення</span>
-    </div>
-    <div class="news-sources reveal">
-      <button class="ns-tab active" onclick="filterNews(this,'all')"><span class="ns-dot" style="background:var(--gold)"></span>Всі джерела</button>
-      <button class="ns-tab" onclick="filterNews(this,'apk')"><span class="ns-dot" style="background:#E87040"></span>APK-Inform</button>
-      <button class="ns-tab" onclick="filterNews(this,'ukr')"><span class="ns-dot" style="background:#4CAF8F"></span>УкрАгроКонсалт</button>
-      <button class="ns-tab" onclick="filterNews(this,'usda')"><span class="ns-dot" style="background:#4090E8"></span>USDA</button>
-    </div>
-    <div class="news-grid" id="newsGrid">
-      <div class="news-card reveal d1" data-src="apk">
-        <div class="nc-top nc-top-1"><div class="nc-emoji">📊</div><span class="nc-badge" style="background:rgba(232,112,64,.25);color:#F49060">APK-Inform</span></div>
-        <div class="nc-body"><div class="nc-date">4 червня 2026 · 09:15</div><h3>Пшениця FOB Чорне море: ціни зросли на тлі активного попиту з Єгипту</h3><p>Котирування пшениці нового врожаю на умовах FOB зросли до $220/т. Єгипет та Туреччина активно формують запаси.</p><a href="https://www.apk-inform.com" target="_blank" class="nc-link">Читати на APK-Inform</a></div>
-      </div>
-      <div class="news-card reveal d2" data-src="ukr">
-        <div class="nc-top nc-top-2"><div class="nc-emoji">🌽</div><span class="nc-badge" style="background:rgba(76,175,143,.25);color:#5CC89A">УкрАгроКонсалт</span></div>
-        <div class="nc-body"><div class="nc-date">3 червня 2026 · 13:00</div><h3>Врожай зернових в Україні 2026: прогноз підвищено до 56 млн тонн</h3><p>Сприятливі погодні умови травня–червня дозволяють переглянути прогноз виробництва у бік зростання.</p><a href="https://www.ukragroconsult.com" target="_blank" class="nc-link">Читати на УкрАгроКонсалт</a></div>
-      </div>
-      <div class="news-card reveal d3" data-src="usda">
-        <div class="nc-top nc-top-3"><div class="nc-emoji">🌍</div><span class="nc-badge" style="background:rgba(64,144,232,.25);color:#70B0F8">USDA WASDE</span></div>
-        <div class="nc-body"><div class="nc-date">9 травня 2026 · 18:00</div><h3>USDA WASDE травень 2026: світові запаси пшениці — мінімум за 9 років</h3><p>Звіт WASDE зафіксував скорочення кінцевих запасів пшениці через зниження виробництва у Росії та ЄС.</p><a href="https://www.ers.usda.gov" target="_blank" class="nc-link">Читати на USDA ERS</a></div>
+      <div style="display:flex;align-items:center;gap:.8rem;flex-wrap:wrap">
+        <span id="news-status" class="live-badge">● Завантаження...</span>
+        <span style="font-size:.72rem;color:var(--text3)">Автооновлення при відкритті</span>
       </div>
     </div>
-    <p style="font-size:.73rem;color:var(--text3);text-align:center;margin-top:1.3rem;font-style:italic">У продакшн-версії новини підтягуються автоматично з RSS APK-Inform, УкрАгроКонсалт та USDA через сервер Next.js.</p>
+    <div class="news-sources reveal" style="margin:1.2rem 0 1.5rem">
+      <button class="ns-tab active" onclick="filterNews(this,'all')"><span class="ns-dot" style="background:var(--gold)"></span>Всі</button>
+      <button class="ns-tab" onclick="filterNews(this,'agro')"><span class="ns-dot" style="background:#E87040"></span>AgroPortal</button>
+      <button class="ns-tab" onclick="filterNews(this,'latif')"><span class="ns-dot" style="background:#4CAF8F"></span>Latifundist</button>
+      <button class="ns-tab" onclick="filterNews(this,'apk')"><span class="ns-dot" style="background:#4090E8"></span>APK-Inform</button>
+    </div>
+
+    <!-- skeleton поки вантажиться -->
+    <div class="news-skeleton" id="newsSkeleton">
+      <div class="news-skel-card"><div class="news-skel-img"></div><div class="news-skel-body"><div class="news-skel-line" style="width:40%"></div><div class="news-skel-line"></div><div class="news-skel-line" style="width:80%"></div></div></div>
+      <div class="news-skel-card"><div class="news-skel-img"></div><div class="news-skel-body"><div class="news-skel-line" style="width:40%"></div><div class="news-skel-line"></div><div class="news-skel-line" style="width:80%"></div></div></div>
+      <div class="news-skel-card"><div class="news-skel-img"></div><div class="news-skel-body"><div class="news-skel-line" style="width:40%"></div><div class="news-skel-line"></div><div class="news-skel-line" style="width:80%"></div></div></div>
+    </div>
+
+    <div class="news-grid" id="newsGrid" style="display:none"></div>
+    <p style="font-size:.73rem;color:var(--text3);text-align:center;margin-top:1.3rem;font-style:italic" id="newsNote"></p>
   </div>
 </section>
 
@@ -975,6 +1105,11 @@ footer{background:#0A1C13;color:rgba(255,255,255,.65);padding:4rem 0 2rem}
   </div>
 </section>
 
+<!-- FLOATING CALL (mobile) -->
+<a href="tel:+380997457326" class="float-call" aria-label="Зателефонувати">
+  <svg viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+</a>
+
 <!-- FOOTER -->
 <footer>
   <div class="container">
@@ -983,6 +1118,10 @@ footer{background:#0A1C13;color:rgba(255,255,255,.65);padding:4rem 0 2rem}
         <div class="footer-brand-name">🌾 ОЛІТСАР АГРО ГРУП</div>
         <div class="footer-brand-sub">Grain Trading · Ukraine</div>
         <p class="footer-desc">Закуповуємо зернові та олійні культури у виробників України. Власні потужності у Миколаївській обл. З ПДВ та без ПДВ.</p>
+        <div style="margin-top:1rem;padding:.7rem 1rem;background:rgba(212,160,23,.1);border:1px solid rgba(212,160,23,.2);border-radius:var(--r-sm)">
+          <p style="font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:.2rem">🌱 ГО «Чесна Земля»</p>
+          <p style="font-size:.78rem;color:rgba(255,255,255,.5);line-height:1.5">Безкоштовні консультації для малих фермерів — легалізація, продаж зерна, захист прав</p>
+        </div>
         <div style="display:flex;gap:.6rem;margin-top:1.2rem;flex-wrap:wrap">
           <a href="https://t.me/+380997457326" target="_blank" style="width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;transition:background .2s" onmouseover="this.style.background='#229ED9'" onmouseout="this.style.background='rgba(255,255,255,.08)'"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M21 3L3 10.5l7 1.5 2 7 3.5-3 4.5 3 1-16z"/></svg></a>
           <a href="viber://chat?number=%2B380997457326" style="width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;transition:background .2s" onmouseover="this.style.background='#7360F2'" onmouseout="this.style.background='rgba(255,255,255,.08)'"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M3 5a2 2 0 012-2h3l2 4-2.5 1.5A11 11 0 0015.5 16L17 13.5l4 2v3a2 2 0 01-2 2C8.5 21 3 14.5 3 8V5z"/></svg></a>
@@ -1130,6 +1269,86 @@ async function submitModalForm(btn){
 
 /* SUBMIT (modal fallback) */
 function handleSubmit(btn){ submitModalForm(btn); }
+
+/* ── LOGISTICS & CALCULATOR ── */
+const LOGISTICS = [
+  {from:25, to:50,  f1:400,  f3:333.33},
+  {from:50, to:75,  f1:450,  f3:375.00},
+  {from:75, to:100, f1:550,  f3:458.33},
+  {from:100,to:125, f1:650,  f3:541.67},
+  {from:125,to:150, f1:700,  f3:583.33},
+  {from:150,to:175, f1:800,  f3:666.67},
+  {from:175,to:200, f1:850,  f3:708.33},
+  {from:200,to:225, f1:900,  f3:750.00},
+  {from:225,to:250, f1:1000, f3:833.33},
+  {from:250,to:275, f1:1100, f3:916.67},
+  {from:275,to:300, f1:1200, f3:1000.00},
+  {from:325,to:350, f1:1250, f3:1041.67},
+  {from:375,to:400, f1:1350, f3:1125.00},
+  {from:400,to:425, f1:1400, f3:1166.67},
+  {from:425,to:450, f1:1450, f3:1208.33},
+  {from:450,to:475, f1:1500, f3:1250.00},
+  {from:475,to:500, f1:1550, f3:1291.67},
+  {from:500,to:525, f1:1650, f3:1375.00},
+  {from:525,to:550, f1:1750, f3:1458.33},
+  {from:650,to:675, f1:2100, f3:1750.00},
+];
+
+let calcVat = 'f1';
+
+function calcSetVat(vat, btn){
+  calcVat = vat;
+  document.querySelectorAll('.calc-vat-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  calcUpdate();
+}
+
+function getLogistics(km){
+  return LOGISTICS.find(r => km >= r.from && km <= r.to) || null;
+}
+
+function calcUpdate(){
+  const crop  = document.getElementById('calc-crop').value;
+  const loc   = document.getElementById('calc-loc').value;
+  const dist  = parseInt(document.getElementById('calc-dist').value) || 0;
+  const res   = document.getElementById('calc-result');
+  const empty = document.getElementById('calc-empty');
+
+  if(!crop || !dist){
+    res.style.display='none';
+    empty.style.display='block';
+    return;
+  }
+
+  const cropData = allPrices[crop];
+  const basePrice = cropData ? (cropData[calcVat]?.[loc] || 0) : 0;
+  const logRow = getLogistics(dist);
+  const logCost = logRow ? logRow[calcVat] : null;
+
+  if(!basePrice){
+    empty.textContent = `Ціна для "${crop}" по цій локації не вказана. Зверніться до нас.`;
+    empty.style.display='block';
+    res.style.display='none';
+    return;
+  }
+
+  empty.style.display='none';
+  res.style.display='block';
+
+  const logLabel = logRow ? `${logRow.from}–${logRow.to}` : dist;
+  const finalPrice = logCost ? Math.round(basePrice - logCost) : null;
+
+  document.getElementById('cr-base').textContent = basePrice.toLocaleString('uk-UA') + ' грн/т';
+  document.getElementById('cr-dist-label').textContent = logLabel;
+  document.getElementById('cr-log').textContent = logCost
+    ? '−' + logCost.toLocaleString('uk-UA') + ' грн/т'
+    : 'відстань поза таблицею';
+  document.getElementById('cr-final').textContent = finalPrice
+    ? finalPrice.toLocaleString('uk-UA') + ' грн/т'
+    : '—';
+  document.getElementById('cr-subtitle').textContent =
+    `${crop} · ${loc==='piv'?'Південне':loc==='ode'?'Одесса':'Чорноморськ'} · ${calcVat==='f1'?'Ф1 з ПДВ':'Ф3 без ПДВ'}`;
+}
 
 /* ── PRICES ── */
 const PUBLISHED_CSV = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRsOPYWYLqn5HnxBB4Dn8xYxg169UAMlATnJ6SFfINuN09gnBLbbJyfCjmVlf_XRfd28CGf-xU3V-0a/pub?output=csv&gid=0';
@@ -1334,14 +1553,104 @@ const so=new IntersectionObserver(entries=>{
 const st=document.getElementById('stats');
 if(st)so.observe(st);
 
-/* NEWS FILTER */
-function filterNews(btn,src){
+/* ── NEWS RSS AUTO-FETCH ── */
+const NEWS_SOURCES = [
+  { key:'agro',  name:'AgroPortal',  color:'#E87040', bg:'rgba(232,112,64,.2)',
+    rss:'https://agroportal.ua/rss/news.xml', site:'https://agroportal.ua' },
+  { key:'latif', name:'Latifundist', color:'#4CAF8F', bg:'rgba(76,175,143,.2)',
+    rss:'https://latifundist.com/rss',         site:'https://latifundist.com' },
+  { key:'apk',   name:'APK-Inform',  color:'#4090E8', bg:'rgba(64,144,232,.2)',
+    rss:'https://www.apk-inform.com/ua/rss',   site:'https://www.apk-inform.com' },
+];
+const RSS2JSON = 'https://api.rss2json.com/v1/api.json?count=4&rss_url=';
+let newsItems = [];
+
+function stripHtml(h){ return h ? h.replace(/<[^>]*>/g,'').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&nbsp;/g,' ').trim() : ''; }
+
+function fmtNewsDate(d){
+  try{ return new Date(d).toLocaleDateString('uk-UA',{day:'numeric',month:'long',year:'numeric'}); }
+  catch{ return d; }
+}
+
+function buildNewsCard(item){
+  const emojis = ['📊','🌾','🌽','📈','🚢','🌍','💰'];
+  const emoji = emojis[Math.floor(Math.random()*emojis.length)];
+  const bgs = ['nc-top-1','nc-top-2','nc-top-3'];
+  const bg = bgs[newsItems.indexOf(item) % 3];
+  const desc = stripHtml(item.description).substring(0,130) + '...';
+  const title = stripHtml(item.title).substring(0,90);
+  return `<div class="news-card" data-src="${item._src}">
+    <div class="nc-top ${bg}">
+      <div class="nc-emoji">${emoji}</div>
+      <span class="nc-badge" style="background:${item._srcBg};color:${item._srcColor}">${item._srcName}</span>
+    </div>
+    <div class="nc-body">
+      <div class="nc-date">${fmtNewsDate(item.pubDate)}</div>
+      <h3>${title}</h3>
+      <p>${desc}</p>
+      <a href="${item.link}" target="_blank" rel="noopener" class="nc-link">Читати далі</a>
+    </div>
+  </div>`;
+}
+
+async function fetchNewsFromRSS(){
+  const grid = document.getElementById('newsGrid');
+  const skel = document.getElementById('newsSkeleton');
+  const status = document.getElementById('news-status');
+  const note = document.getElementById('newsNote');
+  const results = [];
+
+  await Promise.all(NEWS_SOURCES.map(async src => {
+    try {
+      const res = await fetch(RSS2JSON + encodeURIComponent(src.rss));
+      const data = await res.json();
+      if(data.status === 'ok' && data.items?.length){
+        data.items.slice(0,3).forEach(item => results.push({
+          ...item,
+          _src: src.key, _srcName: src.name,
+          _srcColor: src.color, _srcBg: src.bg
+        }));
+      }
+    } catch(e){ /* джерело недоступне */ }
+  }));
+
+  skel.style.display = 'none';
+  grid.style.display = '';
+
+  if(results.length){
+    newsItems = results.sort((a,b) => new Date(b.pubDate) - new Date(a.pubDate));
+    grid.innerHTML = newsItems.slice(0,6).map(buildNewsCard).join('');
+    status.textContent = '● Оновлено щойно';
+    status.style.color = 'var(--gold)';
+  } else {
+    // fallback — статичні новини
+    grid.innerHTML = `
+      <div class="news-card" data-src="agro">
+        <div class="nc-top nc-top-1"><div class="nc-emoji">📊</div><span class="nc-badge" style="background:rgba(232,112,64,.2);color:#F49060">AgroPortal</span></div>
+        <div class="nc-body"><div class="nc-date">${fmtNewsDate(new Date())}</div><h3>Ринок зерна: актуальні ціни та тенденції</h3><p>Слідкуйте за актуальними новинами українського аграрного ринку на провідних галузевих ресурсах.</p><a href="https://agroportal.ua" target="_blank" class="nc-link">agroportal.ua</a></div>
+      </div>
+      <div class="news-card" data-src="latif">
+        <div class="nc-top nc-top-2"><div class="nc-emoji">🌾</div><span class="nc-badge" style="background:rgba(76,175,143,.2);color:#5CC89A">Latifundist</span></div>
+        <div class="nc-body"><div class="nc-date">${fmtNewsDate(new Date())}</div><h3>Аграрна аналітика та огляди ринку</h3><p>Новини зернового ринку, аналітика та прогнози від провідних українських аграрних видань.</p><a href="https://latifundist.com" target="_blank" class="nc-link">latifundist.com</a></div>
+      </div>
+      <div class="news-card" data-src="apk">
+        <div class="nc-top nc-top-3"><div class="nc-emoji">📈</div><span class="nc-badge" style="background:rgba(64,144,232,.2);color:#70B0F8">APK-Inform</span></div>
+        <div class="nc-body"><div class="nc-date">${fmtNewsDate(new Date())}</div><h3>APK-Inform: зернові котирування та огляди</h3><p>Актуальні котирування, аналітика ринку та прогнози від агентства APK-Inform.</p><a href="https://www.apk-inform.com" target="_blank" class="nc-link">apk-inform.com</a></div>
+      </div>`;
+    status.textContent = '● Статичний режим';
+    note.textContent = 'Для автоматичного оновлення новин потрібен запущений сайт на домені.';
+  }
+}
+
+function filterNews(btn, src){
   document.querySelectorAll('.ns-tab').forEach(t=>t.classList.remove('active'));
   btn.classList.add('active');
   document.querySelectorAll('#newsGrid .news-card').forEach(c=>{
-    c.style.display=(src==='all'||c.dataset.src===src)?'':'none';
+    c.style.display = (src==='all' || c.dataset.src===src) ? '' : 'none';
   });
 }
+
+fetchNewsFromRSS();
 
 /* SPECS TOGGLE */
 function toggleSpecs(btn){
