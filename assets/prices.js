@@ -89,6 +89,9 @@
     const name = f.querySelector('[name=name]').value.trim();
     const phone = f.querySelector('[name=phone]').value.trim();
     if (!name || !phone) { alert("Вкажіть ім'я та телефон"); return false; }
+    const dg = phone.replace(/\D/g, '');
+    if (!((dg.length === 10 && dg[0] === '0') || (dg.length === 12 && dg.startsWith('380')) || (dg.length === 9 && dg[0] !== '0') || (dg.length >= 11 && dg.length <= 13 && dg[0] !== '0'))) {
+      alert('Перевірте номер телефону — наприклад, 067 123 45 67'); return false; }
     const data = {
       _subject: '🌾 Заявка з сайту: ' + f.dataset.crop,
       Форма: 'Сторінка ' + location.pathname,

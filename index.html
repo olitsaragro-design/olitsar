@@ -1238,7 +1238,13 @@ async function sendToCRM(data){
   }catch(e){ return false; }
 }
 
+function validPhone(v){
+  const d=String(v||'').replace(/\D/g,'');
+  return (d.length===10&&d[0]==='0')||(d.length===12&&d.startsWith('380'))||(d.length===9&&d[0]!=='0')||(d.length>=11&&d.length<=13&&d[0]!=='0');
+}
+
 async function sendToFormspree(data){
+  if(!validPhone(data['Телефон'])){ alert('Перевірте номер телефону — наприклад, 067 123 45 67'); return false; }
   // заявка йде і в CRM, і на пошту (резерв): достатньо, щоб дійшла хоч одним шляхом
   const mail = fetch(FORMSPREE, {
     method:'POST',
