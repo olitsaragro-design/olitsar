@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://olitsar.com/sitemap-1.xml
 Sitemap: https://olitsar.com/sitemap.xml
