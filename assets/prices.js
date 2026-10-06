@@ -100,14 +100,16 @@
       Коментар: f.querySelector('[name=msg]').value.trim()
     };
     const orig = btn.textContent; btn.disabled = true; btn.textContent = 'Надсилаємо...';
-    // заявка йде і в CRM, і на пошту (резерв)
-    const mail = fetch('https://formspree.io/f/xqeopoaw', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(data) })
-      .then(r => r.ok).catch(() => false);
-    const crm = fetch('https://grainflow-crm-eoeu.vercel.app/api/lead/site', { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
-      body: JSON.stringify({ name, phone, crop: f.dataset.crop, volume: data.Обсяг, message: data.Коментар, form: 'Сторінка сайту', page: location.pathname, website: (f.querySelector('[name=website]') || {}).value || '' }) })
-      .then(r => r.ok).catch(() => false);
-    const [m, c] = await Promise.all([mail, crm]);
-    if (m || c) { btn.textContent = '✓ Заявку надіслано!'; f.reset(); }
+    // спершу CRM, потім пошта (резерв) — у листі видно, що відповіла CRM
+    let crm = 'не дійшло';
+    try {
+      const r = await fetch('https://grainflow-crm-eoeu.vercel.app/api/lead/site', { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
+        body: JSON.stringify({ name, phone, crop: f.dataset.crop, volume: data.Обсяг, message: data.Коментар, form: 'Сторінка сайту', page: location.pathname, website: (f.querySelector('[name=website]') || {}).value || '' }) });
+      crm = r.ok ? 'ok' : 'помилка ' + r.status + ' ' + (await r.text().catch(() => '')).slice(0, 120);
+    } catch (e) { crm = 'не дійшло: ' + String((e && e.message) || e).slice(0, 120); }
+    const m = await fetch('https://formspree.io/f/xqeopoaw', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({ ...data, CRM: crm, 'Версія сайту': 'v7' }) }).then(r => r.ok).catch(() => false);
+    if (m || crm === 'ok') { btn.textContent = '✓ Заявку надіслано!'; f.reset(); }
     else btn.textContent = 'Помилка — зателефонуйте нам';
     setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 4000);
     return false;

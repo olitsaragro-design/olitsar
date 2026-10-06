@@ -1234,8 +1234,10 @@ async function sendToCRM(data){
         volume:data['Обсяг']||'', message:[data['Повідомлення'],data['Коментар'],data['Email']&&('Email: '+data['Email'])].filter(Boolean).join('\n'),
         form:data['Форма']||'', page:location.pathname, website:data._hp||'' })
     });
-    return r.ok;
-  }catch(e){ return false; }
+    if(r.ok) return 'ok';
+    let t=''; try{ t=(await r.text()).slice(0,120); }catch(_){}
+    return 'помилка '+r.status+' '+t;
+  }catch(e){ return 'не дійшло: '+String(e&&e.message||e).slice(0,120); }
 }
 
 function validPhone(v){
@@ -1246,13 +1248,13 @@ function validPhone(v){
 async function sendToFormspree(data){
   if(!validPhone(data['Телефон'])){ alert('Перевірте номер телефону — наприклад, 067 123 45 67'); return false; }
   // заявка йде і в CRM, і на пошту (резерв): достатньо, щоб дійшла хоч одним шляхом
-  const mail = fetch(FORMSPREE, {
+  const crm = await sendToCRM(data);
+  const m = await fetch(FORMSPREE, {
     method:'POST',
     headers:{'Content-Type':'application/json','Accept':'application/json'},
-    body: JSON.stringify(data)
+    body: JSON.stringify({...data, CRM: crm, 'Версія сайту':'v7'})
   }).then(r=>r.ok).catch(()=>false);
-  const [m, c] = await Promise.all([mail, sendToCRM(data)]);
-  return m || c;
+  return m || crm==='ok';
 }
 
 /* QUICK FORM */
