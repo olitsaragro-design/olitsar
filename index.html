@@ -1229,7 +1229,7 @@ const CRM_LEAD = 'https://grainflow-crm-eoeu.vercel.app/api/lead/site';
 async function sendToCRM(data){
   try{
     const r = await fetch(CRM_LEAD, {
-      method:'POST', headers:{'Content-Type':'application/json'}, keepalive:true,
+      method:'POST', headers:{'Content-Type':'text/plain;charset=UTF-8'},
       body: JSON.stringify({ name:data['Імя']||'', phone:data['Телефон']||'', crop:data['Культура']||'',
         volume:data['Обсяг']||'', message:[data['Повідомлення'],data['Коментар'],data['Email']&&('Email: '+data['Email'])].filter(Boolean).join('\n'),
         form:data['Форма']||'', page:location.pathname, website:data._hp||'' })
