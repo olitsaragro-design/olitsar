@@ -43,6 +43,42 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://olitsar.com/statti</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://olitsar.com/statti/f1-chy-f3</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://olitsar.com/statti/yak-pereviryty-pokuptsia-zerna</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://olitsar.com/statti/vid-choho-zalezhyt-tsina-pshenytsi</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://olitsar.com/statti/pidhotovka-partii-zerna</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://olitsar.com/statti/dohovir-kupivli-prodazhu-zerna</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://olitsar.com/chesna-zemlya</loc>
     <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
