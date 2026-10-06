@@ -1224,13 +1224,29 @@ footer{background:#0A1C13;color:rgba(255,255,255,.65);padding:4rem 0 2rem}
 /* ── FORMSPREE CONFIG ── */
 const FORMSPREE = 'https://formspree.io/f/xqeopoaw';
 
+/* ── CRM: заявки одразу падають у GrainFlow CRM (картка клієнта + задача + Telegram) ── */
+const CRM_LEAD = 'https://grainflow-crm-eoeu.vercel.app/api/lead/site';
+async function sendToCRM(data){
+  try{
+    const r = await fetch(CRM_LEAD, {
+      method:'POST', headers:{'Content-Type':'application/json'}, keepalive:true,
+      body: JSON.stringify({ name:data['Імя']||'', phone:data['Телефон']||'', crop:data['Культура']||'',
+        volume:data['Обсяг']||'', message:[data['Повідомлення'],data['Коментар'],data['Email']&&('Email: '+data['Email'])].filter(Boolean).join('\n'),
+        form:data['Форма']||'', page:location.pathname, website:data._hp||'' })
+    });
+    return r.ok;
+  }catch(e){ return false; }
+}
+
 async function sendToFormspree(data){
-  const res = await fetch(FORMSPREE, {
+  // заявка йде і в CRM, і на пошту (резерв): достатньо, щоб дійшла хоч одним шляхом
+  const mail = fetch(FORMSPREE, {
     method:'POST',
     headers:{'Content-Type':'application/json','Accept':'application/json'},
     body: JSON.stringify(data)
-  });
-  return res.ok;
+  }).then(r=>r.ok).catch(()=>false);
+  const [m, c] = await Promise.all([mail, sendToCRM(data)]);
+  return m || c;
 }
 
 /* QUICK FORM */

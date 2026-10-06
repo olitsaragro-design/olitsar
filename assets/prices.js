@@ -97,11 +97,15 @@
       Коментар: f.querySelector('[name=msg]').value.trim()
     };
     const orig = btn.textContent; btn.disabled = true; btn.textContent = 'Надсилаємо...';
-    try {
-      const r = await fetch('https://formspree.io/f/xqeopoaw', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(data) });
-      if (!r.ok) throw 0;
-      btn.textContent = '✓ Заявку надіслано!'; f.reset();
-    } catch (e) { btn.textContent = 'Помилка — зателефонуйте нам'; }
+    // заявка йде і в CRM, і на пошту (резерв)
+    const mail = fetch('https://formspree.io/f/xqeopoaw', { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(data) })
+      .then(r => r.ok).catch(() => false);
+    const crm = fetch('https://grainflow-crm-eoeu.vercel.app/api/lead/site', { method: 'POST', headers: { 'Content-Type': 'application/json' }, keepalive: true,
+      body: JSON.stringify({ name, phone, crop: f.dataset.crop, volume: data.Обсяг, message: data.Коментар, form: 'Сторінка сайту', page: location.pathname, website: (f.querySelector('[name=website]') || {}).value || '' }) })
+      .then(r => r.ok).catch(() => false);
+    const [m, c] = await Promise.all([mail, crm]);
+    if (m || c) { btn.textContent = '✓ Заявку надіслано!'; f.reset(); }
+    else btn.textContent = 'Помилка — зателефонуйте нам';
     setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 4000);
     return false;
   };

@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/site.css?v=3">
+<link rel="stylesheet" href="/assets/site.css?v=4">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "@id": "https://olitsar.com/chesna-zemlya", "url": "https://olitsar.com/chesna-zemlya", "name": "ГО «Чесна Земля» — безкоштовні консультації для фермерів", "inLanguage": "uk", "description": "Безкоштовні консультації для малих фермерів: легалізація бізнесу, ФОП і ПДВ, як продати зерно вигідно і в білу, перевірка покупця та договору.", "isPartOf": {"@id": "https://olitsar.com/#website"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Головна", "item": "https://olitsar.com/"}, {"@type": "ListItem", "position": 2, "name": "ГО «Чесна Земля»", "item": "https://olitsar.com/chesna-zemlya"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Скільки коштує консультація?", "acceptedAnswer": {"@type": "Answer", "text": "Консультації ГО «Чесна Земля» безкоштовні для малих аграрних господарств."}}, {"@type": "Question", "name": "Чим відрізняється продаж зерна за Ф1 і Ф3?", "acceptedAnswer": {"@type": "Answer", "text": "Ф1 — продаж з ПДВ, коли продавець зареєстрований платником ПДВ; Ф3 — без ПДВ. Від формату залежить ціна, документи та податкові наслідки. На консультації пояснимо, що вигідніше саме у вашій ситуації."}}, {"@type": "Question", "name": "Як перевірити покупця зерна?", "acceptedAnswer": {"@type": "Answer", "text": "Почніть з офіційних реєстрів: статус компанії, борги, судові справи (наприклад, через Opendatabot або YouControl). Уважно перевірте договір: ціну, базис, порядок приймання, строки та спосіб оплати. Ми допоможемо розібратися з конкретним договором."}}, {"@type": "Question", "name": "Чи допомагаєте оформити ФОП або фермерське господарство?", "acceptedAnswer": {"@type": "Answer", "text": "Так. Пояснюємо, яку форму обрати, допомагаємо з реєстрацією, питаннями платника ПДВ та бухгалтерського обліку."}}, {"@type": "Question", "name": "Чи потрібно продавати зерно ОЛІТСАР, щоб отримати консультацію?", "acceptedAnswer": {"@type": "Answer", "text": "Ні. Консультація не зобов'язує продавати зерно саме нам — наша мета, щоб фермери працювали чесно та отримували справедливу ціну."}}]}]}</script>
 </head>
 <body>
@@ -101,6 +101,7 @@
   </div>
   <form class="form" data-crop="Консультація ГО «Чесна Земля»" onsubmit="return sendLead(this.querySelector('button'))">
     <h3>Заявка: Консультація ГО «Чесна Земля»</h3>
+    <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
     <label for="f-name">Ім'я *</label><input id="f-name" name="name" autocomplete="name" required>
     <label for="f-phone">Телефон *</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="+38 (0__) ___-__-__" required>
     <label for="f-vol">Обсяг, тонн</label><input id="f-vol" name="volume" inputmode="numeric">
@@ -129,6 +130,6 @@
   </div>
   <div class="ft-bottom"><span>© 2026 ТОВ «ОЛІТСАР АГРО ГРУП»</span><a href="/">olitsar.com</a></div>
 </div></footer>
-<script src="/assets/prices.js?v=3" defer></script>
+<script src="/assets/prices.js?v=4" defer></script>
 </body>
 </html>
