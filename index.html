@@ -472,6 +472,7 @@ footer{background:#0A1C13;color:rgba(255,255,255,.65);padding:4rem 0 2rem}
       <a href="#production">Виробництво</a>
       <a href="#products">Продукція</a>
       <a href="#news">Новини</a>
+      <a href="/finance">Фінансування</a>
       <a href="/statti">Статті</a>
       <a href="#contact" class="nav-btn">Отримати ціну</a>
     </div>
@@ -485,6 +486,7 @@ footer{background:#0A1C13;color:rgba(255,255,255,.65);padding:4rem 0 2rem}
   <a href="#production" class="ml">Виробництво</a>
   <a href="#products" class="ml">Продукція</a>
   <a href="#news" class="ml">Новини ринку</a>
+  <a href="/finance" class="ml">Фінансування для фермерів</a>
   <a href="/statti" class="ml">Статті для фермерів</a>
   <a href="/chesna-zemlya" class="ml">ГО «Чесна Земля»</a>
   <a href="#contact" class="ml" style="color:var(--gold);font-weight:600">Отримати ціну →</a>
@@ -582,16 +584,17 @@ footer{background:#0A1C13;color:rgba(255,255,255,.65);padding:4rem 0 2rem}
           <button class="vat-btn" onclick="setVat('f3',this)">Ф3 · Без ПДВ</button>
         </div>
         <div class="loc-tabs">
-          <button class="loc-btn active" onclick="setLoc('piv',this)">Південне</button>
+          <button class="loc-btn active" onclick="setLoc('best',this)">Найкраща</button>
+          <button class="loc-btn" onclick="setLoc('dun',this)">Дунай</button>
           <button class="loc-btn" onclick="setLoc('ode',this)">Одеса</button>
-          <button class="loc-btn" onclick="setLoc('chn',this)">Чорноморськ</button>
+          <button class="loc-btn" onclick="setLoc('myk',this)">Миколаїв</button>
         </div>
       </div>
     </div>
 
     <div class="prices-grid" id="pricesGrid">
       <div style="grid-column:1/-1;text-align:center;padding:2rem;color:rgba(255,255,255,.4);font-size:.9rem">
-        Ціни закупівлі пшениці 2–4 класу, кукурудзи, ячменю, соняшнику та сої на базисах Південний, Одеса та Чорноморськ — з ПДВ (Ф1) та без ПДВ (Ф3). Оновлюємо щодня. Актуальну ціну під вашу партію назвемо за телефоном <a href="tel:+380997457326" style="color:var(--gold)">+38 (099) 745-73-26</a>.
+        Ціни закупівлі пшениці 2–4 класу, кукурудзи, ячменю, соняшнику, сої та ріпаку на базисах Дунай (Ізмаїл, Рені), Одеса й Миколаїв — з ПДВ (Ф1) та без ПДВ (Ф3). Оновлюємо щодня. Актуальну ціну під вашу партію назвемо за телефоном <a href="tel:+380997457326" style="color:var(--gold)">+38 (099) 745-73-26</a>.
       </div>
     </div>
 
@@ -1389,7 +1392,7 @@ function calcUpdate(){
   }
 
   const cropData = allPrices[crop];
-  const basePrice = cropData ? (cropData[calcVat]?.[loc] || 0) : 0;
+  const basePrice = cropData && cropData[loc] ? (cropData[loc][calcVat] || 0) : 0;
   const logRow = getLogistics(dist);
   const logCost = logRow ? logRow[calcVat] : null;
 
@@ -1415,45 +1418,42 @@ function calcUpdate(){
     ? finalPrice.toLocaleString('uk-UA') + ' грн/т'
     : '—';
   document.getElementById('cr-subtitle').textContent =
-    `${crop} · ${loc==='piv'?'Південне':loc==='ode'?'Одеса':'Чорноморськ'} · ${calcVat==='f1'?'Ф1 з ПДВ':'Ф3 без ПДВ'}`;
+    `${crop} · ${LOC_LABELS[loc]||loc} · ${calcVat==='f1'?'Ф1 з ПДВ':'Ф3 без ПДВ'}`;
 }
 
-/* ── PRICES ── */
-const PUBLISHED_CSV = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRsOPYWYLqn5HnxBB4Dn8xYxg169UAMlATnJ6SFfINuN09gnBLbbJyfCjmVlf_XRfd28CGf-xU3V-0a/pub?output=csv&gid=0';
-let allPrices = {}; // { 'Пшениця 3 кл': { f1:{piv,ode,chn}, f3:{piv,ode,chn} } }
+/* ── PRICES ── ціни з CRM (вкладка «Ціни»): найкраща ціна партнера на базисі мінус наша маржа — рахує CRM */
+const PRICES_API = 'https://grainflow-crm-eoeu.vercel.app/api/public/site-prices';
+let allPrices = {}; // { 'Пшениця 3 кл': { best:{f1,f3,where}, dun:{…}, ode:{…}, myk:{…} } }
 let currentVat = 'f1';
-let currentLoc = 'piv';
-const LOC_LABELS = { piv:'Південне', ode:'Одеса', chn:'Чорноморськ' };
+let currentLoc = 'best';
+const LOC_LABELS = { best:'Найкраща', dun:'Дунай (Ізмаїл, Рені)', ode:'Одеса', myk:'Миколаїв' };
 const DSTU = {
   'Пшениця 2 кл':'ДСТУ 3768','Пшениця 3 кл':'ДСТУ 3768','Пшениця 4 кл':'ДСТУ 3768',
-  'Горох':'ДСТУ 4523','Ячмінь':'ДСТУ 3769','Кукурудза':'ДСТУ 4525',
-  'Соя ГМО':'ДСТУ 4964','Соняшник 48%':'ДСТУ 7011','Ріпак':'ДСТУ 4966'
+  'Ячмінь':'ДСТУ 3769','Кукурудза':'ДСТУ 4525','Соя':'ДСТУ 4964','Соняшник':'ДСТУ 7011','Ріпак':'ДСТУ 4966'
 };
 
 function fmt(v){ return (v && v>0) ? Number(v).toLocaleString('uk-UA') : null; }
+function escH(t){ return String(t||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
 
 function renderPrices(){
   const grid = document.getElementById('pricesGrid');
   const crops = Object.keys(allPrices);
-  if(!crops.length){ grid.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:2rem;color:rgba(255,255,255,.4)">Ціни завантажуються...</div>'; return; }
+  if(!crops.length) return; // лишається статичний текст з телефоном
 
   let html = '';
   crops.forEach(name => {
-    const p = allPrices[name];
-    const val = p[currentVat] ? p[currentVat][currentLoc] : null;
-    const display = fmt(val);
-    const isNA = !display;
+    const c = allPrices[name][currentLoc];
+    const display = c ? fmt(c[currentVat]) : null;
+    const where = c ? (currentLoc==='best' ? c.where : (c.where || LOC_LABELS[currentLoc])) : 'немає закупівлі на цьому базисі';
     const dstu = DSTU[name] || '';
-    const unit = name.includes('Соняшник') ? `грн/т` : name.includes('Соя') ? `грн/т` : 'грн/т';
-    html += `<div class="price-card${isNA?' price-na-card':''}">
-      <div class="price-card-name">${name}</div>
+    html += `<div class="price-card${display?'':' price-na-card'}">
+      <div class="price-card-name">${escH(name)}</div>
       <div class="price-card-val">${display || '—'}</div>
-      <div class="price-card-unit">${unit}</div>
+      <div class="price-card-unit">грн/т${where ? ' · ' + escH(where) : ''}</div>
       ${dstu ? `<span class="price-card-badge">${dstu}</span>` : ''}
     </div>`;
   });
 
-  // CTA card
   html += `<div class="price-card" style="display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;text-align:center" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
     <div style="font-size:2rem;margin-bottom:.5rem">📞</div>
     <div style="font-size:.82rem;font-weight:600;color:var(--gold);line-height:1.4">Інша культура<br>або обсяг?</div>
@@ -1476,103 +1476,22 @@ function setLoc(loc, btn){
   renderPrices();
 }
 
-function parseCSV(text){
-  return text.split('\n').map(row=>{
-    const cols=[];let cur='',inQ=false;
-    for(let ch of row){
-      if(ch==='"'){inQ=!inQ;}
-      else if(ch===','&&!inQ){cols.push(cur.trim());cur='';}
-      else cur+=ch;
-    }
-    cols.push(cur.trim());
-    return cols;
-  });
-}
-
 async function fetchPrices(){
   try {
-    const url = PUBLISHED_CSV;
-    const res = await fetch(url);
-    if(!res.ok) throw new Error('fetch failed');
-    const text = await res.text();
-    const rows = parseCSV(text);
-
-    // знаходимо рядок з "КУЛЬТУРА"
-    let hRow = -1;
-    rows.forEach((r,i)=>{ if(r.join('').includes('КУЛЬТУРА')) hRow=i; });
-    if(hRow<0) throw new Error('no header');
-
+    const res = await fetch(PRICES_API, {cache:'no-store'});
+    if(!res.ok) throw new Error('HTTP '+res.status);
+    const j = await res.json();
+    if(!j.crops || !j.crops.length) throw new Error('no prices');
     const data = {};
-    let mode = 'grain'; // grain | soy | sunf
-    let soyLoc='', sunfLoc='';
-
-    rows.slice(hRow+1).forEach(r=>{
-      const name = (r[1]||'').trim();
-      if(!name) return;
-
-      // визначаємо секцію
-      if(name.toLowerCase().includes('соя')) { mode='soy'; return; }
-      if(name.toLowerCase().includes('соняшник')) { mode='sunf'; return; }
-      if(name.toLowerCase().includes('ріпак')) { mode='rape'; return; }
-
-      if(mode==='grain'){
-        const f1piv=parseInt(r[2])||0, f3piv=parseInt(r[3])||0;
-        const f1ode=parseInt(r[4])||0, f3ode=parseInt(r[5])||0;
-        const f1chn=parseInt(r[6])||0, f3chn=parseInt(r[7])||0;
-        if(f1piv||f3piv||f1ode||f3ode||f1chn||f3chn){
-          data[name]={
-            f1:{piv:f1piv, ode:f1ode, chn:f1chn},
-            f3:{piv:f3piv, ode:f3ode, chn:f3chn}
-          };
-        }
-      }
-
-      if(mode==='soy'){
-        // рядки типу: ,Умань,17000 або ,,,0,16900
-        const p1=parseInt(r[2])||0, p2=parseInt(r[4])||0;
-        const price = p1||p2;
-        if(price && !data['Соя ГМО']){
-          const isF3 = !p1 && p2;
-          if(isF3){
-            data['Соя ГМО']={f1:{piv:0,ode:price,chn:0},f3:{piv:price,ode:price,chn:0}};
-          } else {
-            data['Соя ГМО']={f1:{piv:price,ode:price,chn:0},f3:{piv:Math.round(price/1.2),ode:Math.round(price/1.2),chn:0}};
-          }
-        }
-      }
-
-      if(mode==='sunf'){
-        // шукаємо рядок де є і Ф1 і Ф3 (напр. Кропивницький,31000,26950)
-        const p1=parseInt(r[2])||0;
-        const p2=parseInt(r[3])||0;
-        if(p1 && p2 && !data['Соняшник 48%']){
-          // є обидві ціни
-          data['Соняшник 48%']={f1:{piv:p1,ode:0,chn:0},f3:{piv:p2,ode:0,chn:0}};
-        } else if(p1 && !data['Соняшник 48%']){
-          // є тільки Ф1
-          data['Соняшник 48%']={f1:{piv:p1,ode:0,chn:0},f3:{piv:0,ode:0,chn:0}};
-        }
-      }
-    });
-
+    j.crops.forEach(c => { data[c.name] = { best:c.best, dun:c.dun, ode:c.ode, myk:c.myk }; });
     allPrices = data;
-    const d = new Date();
+    const d = j.updatedAt ? new Date(j.updatedAt) : new Date();
     document.getElementById('updatedDate').textContent =
       d.toLocaleDateString('uk-UA',{day:'numeric',month:'long',year:'numeric'});
     renderPrices();
   } catch(e){
-    console.warn('Sheet fetch failed, using fallback', e.message);
-    allPrices = {
-      'Пшениця 4 кл':{f1:{piv:10800,ode:9850, chn:9700}, f3:{piv:9350,ode:8550,chn:8400}},
-      'Пшениця 3 кл':{f1:{piv:10900,ode:10350,chn:10300},f3:{piv:9450,ode:9000,chn:8950}},
-      'Пшениця 2 кл':{f1:{piv:11000,ode:10450,chn:10400},f3:{piv:9550,ode:9050,chn:9000}},
-      'Ячмінь':      {f1:{piv:10050,ode:0,    chn:10000},f3:{piv:8700,ode:0,   chn:0}},
-      'Кукурудза':   {f1:{piv:9600, ode:9400, chn:9400}, f3:{piv:8300,ode:0,   chn:8150}},
-      'Соя ГМО':     {f1:{piv:22000,ode:0,    chn:0},    f3:{piv:0,   ode:0,   chn:0}},
-      'Соняшник 48%':{f1:{piv:31000,ode:0,    chn:31000},f3:{piv:26950,ode:0,  chn:0}},
-    };
-    document.getElementById('updatedDate').textContent = 'орієнтовні — уточнюйте за телефоном';
-    renderPrices();
+    console.warn('Prices fetch failed', e.message);
+    document.getElementById('updatedDate').textContent = 'уточнюйте за телефоном';
   }
 }
 fetchPrices();

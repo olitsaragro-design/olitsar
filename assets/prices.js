@@ -1,83 +1,39 @@
-/* Ціни закупівлі з опублікованої Google-таблиці (та сама, що на головній).
-   Використання: <div id="crop-prices" data-match="Пшениця" data-mode="ports|single"></div> */
+/* Ціни закупівлі з CRM (найкраща ціна на базисі мінус маржа рахується в CRM).
+   Використання: <div id="crop-prices" data-match="Пшениця"></div> */
 (function () {
-  const CSV = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRsOPYWYLqn5HnxBB4Dn8xYxg169UAMlATnJ6SFfINuN09gnBLbbJyfCjmVlf_XRfd28CGf-xU3V-0a/pub?output=csv&gid=0';
-
-  function parseCSV(text) {
-    return text.split('\n').map(row => {
-      const cols = []; let cur = '', inQ = false;
-      for (const ch of row) {
-        if (ch === '"') inQ = !inQ;
-        else if (ch === ',' && !inQ) { cols.push(cur.trim()); cur = ''; }
-        else cur += ch;
-      }
-      cols.push(cur.trim());
-      return cols;
-    });
-  }
-
-  // Та сама логіка розбору, що й на головній сторінці
-  function toPrices(rows) {
-    let hRow = -1;
-    rows.forEach((r, i) => { if (r.join('').includes('КУЛЬТУРА')) hRow = i; });
-    if (hRow < 0) throw new Error('no header');
-    const data = {}; let mode = 'grain';
-    rows.slice(hRow + 1).forEach(r => {
-      const name = (r[1] || '').trim();
-      if (!name) return;
-      const low = name.toLowerCase();
-      if (low.includes('соя')) { mode = 'soy'; return; }
-      if (low.includes('соняшник')) { mode = 'sunf'; return; }
-      if (low.includes('ріпак')) { mode = 'rape'; return; }
-      if (mode === 'grain') {
-        const v = [2, 3, 4, 5, 6, 7].map(i => parseInt(r[i]) || 0);
-        if (v.some(Boolean)) data[name] = { f1: { piv: v[0], ode: v[2], chn: v[4] }, f3: { piv: v[1], ode: v[3], chn: v[5] } };
-      }
-      if (mode === 'soy') {
-        const p1 = parseInt(r[2]) || 0, p2 = parseInt(r[4]) || 0, price = p1 || p2;
-        if (price && !data['Соя']) {
-          data['Соя'] = !p1 && p2
-            ? { f1: { piv: 0 }, f3: { piv: price } }
-            : { f1: { piv: price }, f3: { piv: 0 } };
-        }
-      }
-      if (mode === 'sunf') {
-        const p1 = parseInt(r[2]) || 0, p2 = parseInt(r[3]) || 0;
-        if (p1 && !data['Соняшник 48%']) data['Соняшник 48%'] = { f1: { piv: p1 }, f3: { piv: p2 } };
-      }
-    });
-    return data;
-  }
+  // Ціни з CRM (вкладка «Ціни»): найкраща ціна партнера на базисі мінус наша маржа — рахує CRM
+  const API = 'https://grainflow-crm-eoeu.vercel.app/api/public/site-prices';
+  const BASES = [['dun', 'Дунай (Ізмаїл, Рені)'], ['ode', 'Одеса'], ['myk', 'Миколаїв']];
 
   const fmt = v => (v && v > 0) ? Number(v).toLocaleString('uk-UA') : null;
-  const cell = v => fmt(v) ? `<td class="v">${fmt(v)}</td>` : '<td class="na">—</td>';
+  const esc = t => String(t || '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const cell = (c, k) => c && fmt(c[k]) ? `<td class="v">${fmt(c[k])}</td>` : '<td class="na">—</td>';
 
   async function run() {
     const box = document.getElementById('crop-prices');
     if (!box) return;
-    const match = box.dataset.match, mode = box.dataset.mode || 'ports';
+    const match = box.dataset.match;
     const upd = document.getElementById('prices-upd');
     try {
-      const res = await fetch(CSV);
+      const res = await fetch(API, { cache: 'no-store' });
       if (!res.ok) throw new Error('fetch');
-      const data = toPrices(parseCSV(await res.text()));
-      const names = Object.keys(data).filter(n => n.toLowerCase().includes(match.toLowerCase()));
-      if (!names.length) return; // лишаємо статичний текст
+      const j = await res.json();
+      const list = (j.crops || []).filter(c => c.name.toLowerCase().includes(match.toLowerCase()));
+      if (!list.length) throw new Error('none'); // лишаємо статичний текст
+      // показуємо лише ті базиси, де є хоч одна ціна
+      const bases = BASES.filter(([k]) => list.some(c => c[k]));
       let html = '<div class="tbl-wrap"><table class="pt"><thead>';
-      if (mode === 'ports') {
-        html += '<tr><th rowspan="2">Культура</th><th colspan="2">Південний</th><th colspan="2">Одеса</th><th colspan="2">Чорноморськ</th></tr>' +
-                '<tr><th>Ф1 з ПДВ</th><th>Ф3 без ПДВ</th><th>Ф1 з ПДВ</th><th>Ф3 без ПДВ</th><th>Ф1 з ПДВ</th><th>Ф3 без ПДВ</th></tr></thead><tbody>';
-        names.forEach(n => {
-          const p = data[n];
-          html += `<tr><td>${n}</td>${cell(p.f1.piv)}${cell(p.f3.piv)}${cell(p.f1.ode)}${cell(p.f3.ode)}${cell(p.f1.chn)}${cell(p.f3.chn)}</tr>`;
-        });
+      if (bases.length) {
+        html += '<tr><th rowspan="2">Культура</th>' + bases.map(([, l]) => `<th colspan="2">${l}</th>`).join('') + '</tr><tr>' +
+                bases.map(() => '<th>Ф1 з ПДВ</th><th>Ф3 без ПДВ</th>').join('') + '</tr></thead><tbody>';
+        list.forEach(c => { html += `<tr><td>${esc(c.name)}</td>${bases.map(([k]) => cell(c[k], 'f1') + cell(c[k], 'f3')).join('')}</tr>`; });
       } else {
-        html += '<tr><th>Культура</th><th>Ф1 з ПДВ</th><th>Ф3 без ПДВ</th></tr></thead><tbody>';
-        names.forEach(n => { const p = data[n]; html += `<tr><td>${n}</td>${cell(p.f1.piv)}${cell(p.f3.piv)}</tr>`; });
+        html += '<tr><th>Культура</th><th>Ф1 з ПДВ</th><th>Ф3 без ПДВ</th><th>Базис</th></tr></thead><tbody>';
+        list.forEach(c => { html += `<tr><td>${esc(c.name)}</td>${cell(c.best, 'f1')}${cell(c.best, 'f3')}<td>${esc(c.best && c.best.where)}</td></tr>`; });
       }
       html += '</tbody></table></div>';
       box.innerHTML = html;
-      if (upd) upd.textContent = new Date().toLocaleDateString('uk-UA', { day: 'numeric', month: 'long', year: 'numeric' });
+      if (upd) upd.textContent = new Date(j.updatedAt || Date.now()).toLocaleDateString('uk-UA', { day: 'numeric', month: 'long', year: 'numeric' });
     } catch (e) {
       if (upd) upd.textContent = 'уточнюйте за телефоном';
     }
