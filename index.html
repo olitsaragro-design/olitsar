@@ -121,6 +121,16 @@ h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;line-height:1.15}
 .hero-h1{font-size:clamp(3rem,7vw,5.5rem);font-weight:700;color:#fff;line-height:1.05;margin-bottom:1.2rem}
 .hero-h1 em{font-style:italic;color:var(--gold-lt)}
 .hero-sub{font-size:1.2rem;color:rgba(255,255,255,.82);max-width:600px;margin:0 auto 2.5rem;line-height:1.65;font-weight:300}
+.doors{display:grid;grid-template-columns:1fr 1fr;gap:1rem;max-width:860px;margin:0 auto 2rem;text-align:left}
+.door{display:flex;flex-direction:column;gap:.35rem;padding:1.4rem 1.5rem;border-radius:20px;text-decoration:none;color:#fff;background:rgba(255,255,255,.1);backdrop-filter:blur(14px);border:1.5px solid rgba(255,255,255,.25);transition:transform .2s,border-color .2s,background .2s}
+.door:hover{transform:translateY(-3px);border-color:var(--gold);background:rgba(255,255,255,.16)}
+.door-buy{border-color:var(--gold)}
+.door-ico{font-size:1.6rem;line-height:1}
+.door-k{font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-lt)}
+.door-t{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:700;line-height:1.1}
+.door-d{font-size:.9rem;color:rgba(255,255,255,.78);line-height:1.5}
+.door-go{margin-top:.5rem;align-self:flex-start;background:var(--gold);color:var(--green);font-weight:600;font-size:.9rem;padding:.6rem 1.2rem;border-radius:50px}
+@media(max-width:700px){.doors{grid-template-columns:1fr}.door-t{font-size:1.45rem}}
 .hero-btns{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-bottom:2rem}
 .hero-phone{display:inline-flex;align-items:center;gap:.7rem;color:#fff;font-size:1.4rem;font-family:'Cormorant Garamond',serif;font-weight:600;margin-top:.5rem;transition:color .2s}
 .hero-phone:hover{color:var(--gold)}
@@ -523,13 +533,25 @@ footer{background:#0A1C13;color:rgba(255,255,255,.65);padding:4rem 0 2rem}
     <div class="hero-inner">
       <div class="hero-badge">
         <span class="hero-badge-dot"></span>
-        <span>ПРЯМІ ЗАКУПІВЛІ З УКРАЇНИ</span>
+        <span>ЗАКУПІВЛЯ ЗЕРНА · ВЛАСНИЙ КРУПОЗАВОД</span>
       </div>
       <h1 class="hero-h1">Закупівля зерна<br><em>напряму від виробників</em></h1>
       <p class="hero-sub">Надійний партнер у світі зерна. Купуємо пшеницю, кукурудзу, ячмінь, соняшник, сою та ріпак.<br>Прозоро. Швидко. Вигідно.</p>
-      <div class="hero-btns">
-        <a href="#contact" class="btn btn-gold" style="font-size:1.05rem;padding:1rem 2.5rem">Отримати ціну зараз →</a>
-        <a href="#products" class="btn btn-outline-white" style="font-size:1.05rem">Переглянути продукцію</a>
+      <div class="doors">
+        <a href="#prices" class="door door-sell">
+          <span class="door-ico">🌾</span>
+          <span class="door-k">Ви фермер</span>
+          <span class="door-t">Продати зерно</span>
+          <span class="door-d">Ціни закупівлі сьогодні: пшениця, кукурудза, ячмінь, соняшник, соя, ріпак. З ПДВ і без ПДВ.</span>
+          <span class="door-go">Ціни закупівлі →</span>
+        </a>
+        <a href="/krupy" class="door door-buy">
+          <span class="door-ico">🥣</span>
+          <span class="door-k">Ви покупець</span>
+          <span class="door-t">Купити пшеничну крупу</span>
+          <span class="door-d">«Полтавська» №3, №4, «Артек» від виробника. Опт від 15 грн/кг, роздріб від 22 грн/кг.</span>
+          <span class="door-go">Ціни на крупу →</span>
+        </a>
       </div>
       <a href="tel:+380997457326" class="hero-phone">
         <span class="hero-phone-icon">
@@ -540,14 +562,14 @@ footer{background:#0A1C13;color:rgba(255,255,255,.65);padding:4rem 0 2rem}
       <div class="hero-tagline">
         <span>Працюємо по всій Україні</span>
         <span class="hero-tagline-sep"></span>
-        <span>Власне виробництво · Миколаїв</span>
+        <span>Власний завод · с. Піщане, Черкаська обл.</span>
         <span class="hero-tagline-sep"></span>
         <span>З ПДВ та без ПДВ</span>
       </div>
 
       <!-- ШВИДКА ФОРМА -->
       <div class="quick-form-wrap">
-        <div class="quick-form-label">⚡ Дізнатись ціну за 3 хв</div>
+        <div class="quick-form-label">⚡ Продаєте зерно? Дізнатись ціну за 3 хв</div>
         <div class="quick-form-sub">Залиште ім'я та номер — зв'яжемось і назвемо актуальну ціну закупівлі</div>
         <div class="quick-form-row">
           <input type="text" id="qf-name" placeholder="Ваше ім'я" autocomplete="given-name">
