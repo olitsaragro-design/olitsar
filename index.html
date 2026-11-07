@@ -628,6 +628,53 @@ footer{background:#0A1C13;color:rgba(255,255,255,.65);padding:4rem 0 2rem}
   </div>
 </section>
 
+<!-- NEWS -->
+<section class="section" id="news" style="background:var(--gray)">
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem">
+      <div>
+        <p class="label reveal">Аналітика та новини</p>
+        <h2 class="section-title reveal" style="margin-bottom:0">Новини ринку</h2>
+      </div>
+      <div style="display:flex;align-items:center;gap:.8rem;flex-wrap:wrap">
+        <span id="news-status" class="live-badge">● Новини ринку</span>
+        <span style="font-size:.72rem;color:var(--text3)">Автооновлення при відкритті</span>
+      </div>
+    </div>
+    <div class="reveal" style="margin:1.2rem 0 0;padding:1rem 1.2rem;background:#fff;border:1px solid rgba(15,61,46,.12);border-radius:12px">
+      <p style="font-weight:600;color:var(--green);margin-bottom:.4rem">📚 Корисні статті для фермерів</p>
+      <p style="font-size:.9rem;line-height:1.9">        <a href="/statti/prodazh-zerna-pdv-osin-2026" style="color:var(--green)">Ринок зерна і ПДВ: листопад 2026</a> ·
+        <a href="/statti/tsina-na-soniashnyk-prohnoz" style="color:var(--green)">Прогноз ціни на соняшник</a> ·
+        <a href="/statti/f1-chy-f3" style="color:var(--green)">Ф1 чи Ф3: як продати зерно вигідніше</a> ·
+        <a href="/statti/yak-pereviryty-pokuptsia-zerna" style="color:var(--green)">Як перевірити покупця зерна</a> ·
+        <a href="/statti/vid-choho-zalezhyt-tsina-pshenytsi" style="color:var(--green)">Від чого залежить ціна пшениці</a> ·
+        <a href="/statti/pidhotovka-partii-zerna" style="color:var(--green)">Як підготувати партію</a> ·
+        <a href="/statti/dohovir-kupivli-prodazhu-zerna" style="color:var(--green)">Договір купівлі-продажу зерна</a> ·
+        <a href="/statti/prodazh-zerna-fizychnoiu-osoboiu" style="color:var(--green)">Продаж зерна фізособою</a> ·
+        <a href="/statti/dokumenty-dlia-prodazhu-zerna" style="color:var(--green)">Документи для продажу зерна</a> ·
+        <a href="/statti/volohist-kukurudzy-usushka-sushka" style="color:var(--green)">Усушка кукурудзи</a> ·
+        <a href="/statti" style="color:var(--gold);font-weight:600">Усі статті →</a>
+      </p>
+    </div>
+    <div class="news-sources reveal" style="margin:1.2rem 0 1.5rem">
+      <button class="ns-tab active" onclick="filterNews(this,'all')"><span class="ns-dot" style="background:var(--gold)"></span>Всі</button>
+      <button class="ns-tab" onclick="filterNews(this,'agro')"><span class="ns-dot" style="background:#E87040"></span>AgroPortal</button>
+      <button class="ns-tab" onclick="filterNews(this,'latif')"><span class="ns-dot" style="background:#4CAF8F"></span>Latifundist</button>
+      <button class="ns-tab" onclick="filterNews(this,'apk')"><span class="ns-dot" style="background:#4090E8"></span>APK-Inform</button>
+    </div>
+
+    <!-- skeleton поки вантажиться -->
+    <div class="news-skeleton" id="newsSkeleton">
+      <div class="news-skel-card"><div class="news-skel-img"></div><div class="news-skel-body"><div class="news-skel-line" style="width:40%"></div><div class="news-skel-line"></div><div class="news-skel-line" style="width:80%"></div></div></div>
+      <div class="news-skel-card"><div class="news-skel-img"></div><div class="news-skel-body"><div class="news-skel-line" style="width:40%"></div><div class="news-skel-line"></div><div class="news-skel-line" style="width:80%"></div></div></div>
+      <div class="news-skel-card"><div class="news-skel-img"></div><div class="news-skel-body"><div class="news-skel-line" style="width:40%"></div><div class="news-skel-line"></div><div class="news-skel-line" style="width:80%"></div></div></div>
+    </div>
+
+    <div class="news-grid" id="newsGrid" style="display:none"></div>
+    <p style="font-size:.73rem;color:var(--text3);text-align:center;margin-top:1.3rem;font-style:italic" id="newsNote"></p>
+  </div>
+</section>
+
 <!-- ABOUT -->
 <section class="section" id="about">
   <div class="container">
@@ -1084,54 +1131,6 @@ footer{background:#0A1C13;color:rgba(255,255,255,.65);padding:4rem 0 2rem}
       <div class="proc-step reveal d5"><div class="proc-circle"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><h3>Зважування</h3><p>Зважування, відбір проб та лабораторний аналіз — прозоро за вашої присутності</p></div>
       <div class="proc-step reveal" style="transition-delay:.6s"><div class="proc-circle"><svg viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><h3>Оплата</h3><p>Розрахунок після приймання зерна — безготівковий переказ з ПДВ або без ПДВ</p></div>
     </div>
-  </div>
-</section>
-
-<!-- NEWS -->
-<section class="section" id="news" style="background:var(--gray)">
-  <div class="container">
-    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1rem">
-      <div>
-        <p class="label reveal">Аналітика та новини</p>
-        <h2 class="section-title reveal" style="margin-bottom:0">Новини ринку</h2>
-      </div>
-      <div style="display:flex;align-items:center;gap:.8rem;flex-wrap:wrap">
-        <span id="news-status" class="live-badge">● Новини ринку</span>
-        <span style="font-size:.72rem;color:var(--text3)">Автооновлення при відкритті</span>
-      </div>
-    </div>
-    <div class="reveal" style="margin:1.2rem 0 0;padding:1rem 1.2rem;background:#fff;border:1px solid rgba(15,61,46,.12);border-radius:12px">
-      <p style="font-weight:600;color:var(--green);margin-bottom:.4rem">📚 Корисні статті для фермерів</p>
-      <p style="font-size:.9rem;line-height:1.9">
-        <a href="/statti/f1-chy-f3" style="color:var(--green)">Ф1 чи Ф3: як продати зерно вигідніше</a> ·
-        <a href="/statti/yak-pereviryty-pokuptsia-zerna" style="color:var(--green)">Як перевірити покупця зерна</a> ·
-        <a href="/statti/vid-choho-zalezhyt-tsina-pshenytsi" style="color:var(--green)">Від чого залежить ціна пшениці</a> ·
-        <a href="/statti/pidhotovka-partii-zerna" style="color:var(--green)">Як підготувати партію</a> ·
-        <a href="/statti/dohovir-kupivli-prodazhu-zerna" style="color:var(--green)">Договір купівлі-продажу зерна</a> ·
-        <a href="/statti/prodazh-zerna-fizychnoiu-osoboiu" style="color:var(--green)">Продаж зерна фізособою</a> ·
-        <a href="/statti/dokumenty-dlia-prodazhu-zerna" style="color:var(--green)">Документи для продажу зерна</a> ·
-        <a href="/statti/volohist-kukurudzy-usushka-sushka" style="color:var(--green)">Усушка кукурудзи</a> ·
-        <a href="/statti/prodazh-zerna-pdv-osin-2026" style="color:var(--green)">Ринок зерна і ПДВ: листопад 2026</a> ·
-        <a href="/statti/tsina-na-soniashnyk-prohnoz" style="color:var(--green)">Прогноз ціни на соняшник</a> ·
-        <a href="/statti" style="color:var(--gold);font-weight:600">Усі статті →</a>
-      </p>
-    </div>
-    <div class="news-sources reveal" style="margin:1.2rem 0 1.5rem">
-      <button class="ns-tab active" onclick="filterNews(this,'all')"><span class="ns-dot" style="background:var(--gold)"></span>Всі</button>
-      <button class="ns-tab" onclick="filterNews(this,'agro')"><span class="ns-dot" style="background:#E87040"></span>AgroPortal</button>
-      <button class="ns-tab" onclick="filterNews(this,'latif')"><span class="ns-dot" style="background:#4CAF8F"></span>Latifundist</button>
-      <button class="ns-tab" onclick="filterNews(this,'apk')"><span class="ns-dot" style="background:#4090E8"></span>APK-Inform</button>
-    </div>
-
-    <!-- skeleton поки вантажиться -->
-    <div class="news-skeleton" id="newsSkeleton">
-      <div class="news-skel-card"><div class="news-skel-img"></div><div class="news-skel-body"><div class="news-skel-line" style="width:40%"></div><div class="news-skel-line"></div><div class="news-skel-line" style="width:80%"></div></div></div>
-      <div class="news-skel-card"><div class="news-skel-img"></div><div class="news-skel-body"><div class="news-skel-line" style="width:40%"></div><div class="news-skel-line"></div><div class="news-skel-line" style="width:80%"></div></div></div>
-      <div class="news-skel-card"><div class="news-skel-img"></div><div class="news-skel-body"><div class="news-skel-line" style="width:40%"></div><div class="news-skel-line"></div><div class="news-skel-line" style="width:80%"></div></div></div>
-    </div>
-
-    <div class="news-grid" id="newsGrid" style="display:none"></div>
-    <p style="font-size:.73rem;color:var(--text3);text-align:center;margin-top:1.3rem;font-style:italic" id="newsNote"></p>
   </div>
 </section>
 
