@@ -1,0 +1,33 @@
+query,page,clicks,impressions,ctr,position
+# період: 28 днів (фактично дані за 06–07.11.2026); всього 5 кліків / 138 показів / CTR 3.6% / сер. позиція 16
+grain elevator,,0,5,0%,6.2
+кредити для аграріїв,,0,5,0%,76.2
+агро кредит,,0,4,0%,22.8
+кредит для агробізнесу,,0,4,0%,73.2
+продати соняшник,,0,3,0%,9.7
+агрокредит,,0,2,0%,18.0
+агрокредит україна,,0,2,0%,24.0
+кредитування для аграріїв,,0,2,0%,64.5
+кредити для агробізнесу,,0,2,0%,71.0
+кредити аграріям,,0,2,0%,73.5
+кредитування агробізнесу,,0,2,0%,85.0
+фоп 3,,0,1,0%,2.0
+15-16%,,0,1,0%,6.0
+кредит для фермерського господарства,,0,1,0%,23.0
+кредити для фермерських господарств,,0,1,0%,26.0
+ріпак ціна за тонну,,0,1,0%,30.0
+,https://olitsar.com/,3,14,21.4%,4.8
+,https://olitsar.com/statti/forvardnyi-kontrakt-na-zerno,1,5,20%,5.2
+,https://olitsar.com/statti/f1-chy-f3,1,2,50%,1.5
+,https://olitsar.com/soniashnyk,0,28,0%,8.0
+,https://olitsar.com/finance,0,28,0%,53.4
+,https://olitsar.com/kukurudza,0,23,0%,8.7
+,https://olitsar.com/statti/dokumenty-dlia-prodazhu-zerna,0,16,0%,2.7
+,https://olitsar.com/statti/prodazh-zerna-fizychnoiu-osoboiu,0,11,0%,3.6
+,https://olitsar.com/krupy,0,4,0%,10.8
+,https://olitsar.com/ripak,0,4,0%,11.8
+,https://olitsar.com/statti/yak-zberihaty-krupu,0,3,0%,4.3
+,https://olitsar.com/yachmin,0,2,0%,7.0
+,https://olitsar.com/chesna-zemlya,0,1,0%,1.0
+,https://olitsar.com/statti/vid-choho-zalezhyt-tsina-pshenytsi,0,1,0%,9.0
+,https://olitsar.com/privacy,0,1,0%,11.0
