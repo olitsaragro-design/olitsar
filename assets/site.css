@@ -197,3 +197,13 @@ footer.ft a:hover{color:var(--gold)}
 .article .post-grid{margin:1rem 0 0}
 .pcard.featured{background:linear-gradient(120deg,#fff 55%,#FBF5E6)}
 @media(min-width:760px){.post-grid{grid-template-columns:repeat(2,1fr)}.article .post-grid{grid-template-columns:repeat(2,1fr)}}
+/* mobile contact bar */
+.mbar{display:none}
+@media(max-width:760px){
+.mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:900;gap:.4rem;align-items:center;padding:.5rem .6rem calc(.5rem + env(safe-area-inset-bottom));background:var(--green);border-top:1px solid rgba(212,160,23,.35);box-shadow:0 -4px 16px rgba(0,0,0,.18)}
+.mbar .mb-t{flex:1;min-width:0;color:#fff;font-size:.78rem;line-height:1.2;font-weight:600}
+.mbar a{flex:none;text-decoration:none;font-weight:600;font-size:.82rem;border-radius:999px;padding:.55rem .8rem;white-space:nowrap}
+.mbar .mb-call{background:var(--gold);color:var(--green)}
+.mbar .mb-tg{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.25)}
+body.has-mbar{padding-bottom:64px}
+}
