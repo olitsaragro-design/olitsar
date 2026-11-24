@@ -1,0 +1,38 @@
+query,page,clicks,impressions,ctr,position
+# період: 28 днів (GSC, знято 24.11.2026); всього 102 кліки / 2470 показів / CTR 4.1% / сер. позиція 9.9
+# запити з «круп»: «крупа оптом» 0/2/поз. 9; «крупи оптом від виробника» 0/1/поз. 7
+продати кукурудзу,,1,2,50%,8.0
+продати ячмінь,,1,2,50%,12.0
+закупівля соняшнику,,1,1,100%,28.0
+ціна на сою за готівку на сьогодні без пдв,,1,1,100%,28.0
+grain elevator,,0,29,0%,6.5
+кредити для аграріїв,,0,14,0%,71.9
+ціна на кукурудзу 2026,,0,8,0%,8.8
+дсту соняшник,,0,6,0%,5.7
+що буде з ціною на кукурудзу,,0,6,0%,5.7
+ціна кукурудзи 2026,,0,6,0%,7.5
+ціна на соняшник на сьогодні за готівку,,0,6,0%,33.3
+прогноз ціни на кукурудзу 2026,,0,4,0%,2.5
+продати соняшник,,0,4,0%,9.8
+крупа оптом,,0,2,0%,9.0
+крупи оптом від виробника,,0,1,0%,7.0
+,https://olitsar.com/,32,209,15.3%,7.8
+,https://olitsar.com/statti/volohist-kukurudzy-usushka-sushka,27,846,3.2%,4.3
+,https://olitsar.com/statti/tsina-na-kukurudzu-prohnoz,8,217,3.7%,6.5
+,https://olitsar.com/soniashnyk,5,284,1.8%,11.4
+,https://olitsar.com/kukurudza,5,138,3.6%,9.9
+,https://olitsar.com/yachmin,5,74,6.8%,15.1
+,https://olitsar.com/pshenytsia,4,107,3.7%,6.4
+,https://olitsar.com/statti/dokumenty-dlia-prodazhu-zerna,4,91,4.4%,3.5
+,https://olitsar.com/statti/dohovir-kupivli-prodazhu-zerna,4,20,20%,7.8
+,https://olitsar.com/soia,3,22,13.6%,23.0
+,https://olitsar.com/statti/prodazh-zerna-fizychnoiu-osoboiu,1,124,0.8%,3.6
+,https://olitsar.com/krupy,1,53,1.9%,6.2
+,https://olitsar.com/finance,0,148,0%,60.4
+,https://olitsar.com/statti/yak-varyty-pshenychnu-krupu,0,61,0%,3.9
+,https://olitsar.com/statti/yak-zberihaty-krupu,0,16,0%,5.0
+,https://olitsar.com/statti/krupa-v-mishkakh-optom,0,2,0%,9.0
+,https://olitsar.com/statti/krupa-artek-optom,0,2,0%,24.5
+,https://olitsar.com/statti/poltavska-chy-artek,0,2,0%,3.5
+,https://olitsar.com/statti/krupa-poltavska-optom,0,1,0%,2.0
+,https://olitsar.com/statti/krupa-dlia-tenderiv-prozorro,0,1,0%,7.0
