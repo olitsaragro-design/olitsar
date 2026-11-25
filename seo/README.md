@@ -10,4 +10,4 @@
 ## Файли для AI-агентів
 - `python3 seo/build_ai.py` (потрібні `html2text`, `beautifulsoup4`) — перегенеровує `llms.txt` і Markdown-версії сторінок у `md/`.
   Запускати після кожної зміни або додавання сторінок, перед комітом.
-- `middleware.js` віддає `md/<шлях>.md`, коли запит має `Accept: text/markdown`; заголовки — у `vercel.json`.
+- `proxy.js` (Routing Middleware, підключений у vercel.json → proxy) віддає `md/<шлях>.md`, коли запит має `Accept: text/markdown`; заголовки — у `vercel.json`.

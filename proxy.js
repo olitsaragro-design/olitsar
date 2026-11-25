@@ -1,11 +1,7 @@
 // Markdown for agents: якщо клієнт просить Accept: text/markdown,
 // віддаємо Markdown-версію сторінки з /md/<шлях>.md (генерує seo/build_ai.py).
 // Для звичайних відвідувачів нічого не змінюється — повертаємо undefined, і Vercel віддає HTML.
-export const config = {
-  matcher: ['/((?!assets/|md/|.*\\.(?:png|jpg|jpeg|svg|ico|css|js|xml|txt|md|webp|json)$).*)'],
-};
-
-export default async function middleware(request) {
+export default async function proxy(request) {
   const accept = request.headers.get('accept') || '';
   if (!/text\/markdown/i.test(accept)) return;
 
