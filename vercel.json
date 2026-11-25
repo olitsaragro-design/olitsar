@@ -1,4 +1,33 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/",
+      "headers": [
+        { "key": "Link", "value": "<https://olitsar.com/llms.txt>; rel=\"alternate\"; type=\"text/markdown\"; title=\"llms.txt\", <https://olitsar.com/md/index.md>; rel=\"alternate\"; type=\"text/markdown\", <https://olitsar.com/sitemap.xml>; rel=\"sitemap\"; type=\"application/xml\"" }
+      ]
+    },
+    {
+      "source": "/((?!assets/|md/).*)",
+      "headers": [
+        { "key": "Vary", "value": "Accept" }
+      ]
+    },
+    {
+      "source": "/llms.txt",
+      "headers": [
+        { "key": "Content-Type", "value": "text/markdown; charset=utf-8" },
+        { "key": "X-Robots-Tag", "value": "noindex" }
+      ]
+    },
+    {
+      "source": "/md/(.*)",
+      "headers": [
+        { "key": "Content-Type", "value": "text/markdown; charset=utf-8" },
+        { "key": "Vary", "value": "Accept" },
+        { "key": "X-Robots-Tag", "value": "noindex" }
+      ]
+    }
+  ]
 }
